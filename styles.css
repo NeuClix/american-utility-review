@@ -270,12 +270,14 @@ a:hover { color: var(--navy); }
 
 /* Clients */
 #clients .h2 { margin-bottom: 48px; }
-.client-groups {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 32px;
+/* Newspaper-style columns so shorter groups stack instead of leaving gaps */
+.client-groups { columns: 3 320px; column-gap: 32px; margin-bottom: -32px; }
+.client-group {
+  background: #fff;
+  border: 1px solid var(--border);
+  break-inside: avoid;
+  margin-bottom: 32px;
 }
-.client-group { background: #fff; border: 1px solid var(--border); }
 .client-group__head {
   background: var(--navy);
   color: #fff;
@@ -372,6 +374,6 @@ a:hover { color: var(--navy); }
   .hero__lede { font-size: 18px; }
   .h2, .contact h2 { font-size: 32px; }
   .finds { padding: 24px; }
-  .client-groups { grid-template-columns: minmax(0, 1fr); }
+  .client-groups { columns: 1; }
   .savings { grid-template-columns: minmax(0, 1fr); }
 }
