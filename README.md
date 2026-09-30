@@ -9,3 +9,6 @@ The contact form posts to Web3Forms (web3forms.com). Submissions are emailed to 
 
 ## Partner marketing kit
 Partner dashboards show a "Marketing kit": a personal printable flyer (`flyer.html`, with the partner's QR code) plus any files listed in `partner-kit/kit.json`. To generate materials from the AUR NotebookLM notebook, run `tools/notebooklm_partner_kit.py` on a computer logged in to NotebookLM, review the files, then commit and push the `partner-kit` folder.
+
+## Documentation
+See `docs/`: Partner Guide, Client Guide, Admin Guide, Technical Reference, and the punch list. These are also kept as Google Docs in Drive › AUR Documentation (used as NotebookLM sources). The `docs`, `tools` and `apps-script` folders are excluded from the website via `.vercelignore`.
