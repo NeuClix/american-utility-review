@@ -1,6 +1,6 @@
 # American Utility Review – Punch List
 
-Last updated: September 30, 2026. ✅ = done · ⬜ = to do · [Steve] = needs Steve or AUR
+Last updated: October 1, 2026. ✅ = done · ⬜ = to do · [Steve] = needs Steve or AUR
 
 ## Next up
 - ⬜ [Steve/AUR] **Confirm the school-district rule:** a club or booster group may refer the school district its members work for, with the reward paid to the group (not a person). Some districts have their own rules; AUR should be comfortable with this.
@@ -14,9 +14,9 @@ Last updated: September 30, 2026. ✅ = done · ⬜ = to do · [Steve] = needs S
 - ⬜ [Steve] **Clean test data** from Leads, Clicks, authorization responses, and the TEST CO folder in Drive.
 
 ## Later
-- ⬜ **Google sign-in for partners.** Needs a free OAuth Client ID from Google Cloud Console (about 10 minutes of setup by Steve).
-- ⬜ **Push notifications for partners.** Needs a Firebase project; worth it once there are active partners.
-- ⬜ **Firebase migration plan** (database, sign-in, push, storage) when the Sheet gets busy.
+- ⬜ **1. Google sign-in for partners** (next). Built on Firebase Authentication so steps 2 and 3 reuse it. Steve creates the Firebase project (about 10 minutes); the Sheet stays the back office.
+- ⬜ **2. Push notifications for partners** (Firebase Cloud Messaging), using the same Firebase project.
+- ⬜ **3. Firebase migration** (database, storage, admin view) **with groups:** a leader creates a group with a goal; members each get their own link; credit rolls up to the group and rewards are paid to the group; goal thermometer, leaderboard, team alerts, public group page. AUR to decide: group reward or goal bonus, who can start a group (open or approved).
 - ⬜ **"Ask the AUR assistant" button** linking to a public NotebookLM share, if wanted.
 - ⬜ **Credibility updates from the research report:** dated and documented results, a typical-outcome line, client-name permissions, a "How we're paid" section, a trust bar, and an anti-scam statement.
 - ⬜ **Sector and Missouri content pages:** schools, hospitals, cities, manufacturers (sales-tax exemption), restaurants and hotels.
