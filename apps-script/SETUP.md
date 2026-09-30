@@ -35,3 +35,16 @@ If you change the script later, use **Deploy → Manage deployments → Edit →
 
 ## Before paying anyone
 Collect a W-9 before the first payment and issue 1099s as required. Ask your accountant for the current reporting threshold.
+
+## Document uploads (added later)
+Every request made through the website now leads to a private upload page, where the client uploads bills and gets a button to sign your Letter of Authorization form. Files are saved in your Google Drive under **AUR Client Documents / <organization> - <date>**.
+
+**To turn it on after the first setup:**
+1. In Apps Script, replace all the code with the new `Code.gs` and click **Save**.
+2. Run **setup** again. Google asks for one new permission, Google Drive, so it can save the files. Your existing rows are kept, and three columns are added to Leads: Documents, Docs folder and Upload token (hidden).
+3. **Deploy → Manage deployments → pencil (Edit) → Version: New version → Deploy.** The web app URL stays the same.
+4. Reload the Sheet. A new **AUR** menu appears.
+
+**Collecting documents from anyone:** in the Leads tab, select a lead's row, or add a row with a Name and Organization for someone who called or emailed. Then choose **AUR → Create upload link for selected lead** and send them the link.
+
+**Settings tab:** `loa_form_url` is the authorization form the upload page links to. `docs_folder_id` is filled in automatically; don't change it.

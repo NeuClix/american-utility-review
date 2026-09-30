@@ -566,3 +566,51 @@ a:hover { color: var(--navy); }
   .link-box { flex-direction: column; }
   .stat__num { font-size: 28px; }
 }
+
+/* ---------- Document upload page ---------- */
+.up-grid { margin-top: 32px; }
+.up-help { margin: 0 0 16px; }
+.step-num {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+  font-size: 15px;
+  margin-right: 8px;
+  vertical-align: 2px;
+}
+.dropzone {
+  display: grid;
+  gap: 6px;
+  justify-items: center;
+  text-align: center;
+  padding: 36px 20px;
+  border: 2px dashed var(--chip);
+  border-radius: 4px;
+  background: var(--tint);
+  cursor: pointer;
+  transition: border-color .15s, background-color .15s;
+}
+.dropzone:hover, .dropzone.is-over { border-color: var(--blue); background: #e8f1fa; }
+.dropzone input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.dropzone:focus-within { outline: 2px solid var(--blue); outline-offset: 2px; }
+.dropzone__title { font-weight: 700; font-size: 17px; }
+.dropzone__hint { font-size: 14px; color: var(--slate); }
+.file-list { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 6px; }
+.file-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  font-size: 14px;
+}
+.file-list__name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.file-list__state { flex: none; color: var(--slate); }
+.file-list .is-done .file-list__state { color: #1d6b34; font-weight: 700; }
+.file-list .is-error .file-list__state { color: var(--red); white-space: normal; text-align: right; }
+.up-loa { display: block; text-align: center; margin-top: 8px; }
+#up-msg { margin-top: 14px; }

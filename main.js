@@ -56,6 +56,7 @@ function sendToSheet(form) {
     website: form.elements.botcheck.checked ? 'bot' : ''
   }).then(function (data) {
     if (!data.ok) throw new Error(data.error || '');
+    return data.upload || '';
   });
 }
 
@@ -73,7 +74,12 @@ if (contactForm) contactForm.addEventListener('submit', function (e) {
     : sendToWeb3Forms(form);
 
   send
-    .then(function () {
+    .then(function (upload) {
+      // Next step: the private page for uploading bills and signing the authorization
+      if (upload) {
+        location.href = 'upload.html?u=' + encodeURIComponent(upload);
+        return;
+      }
       form.reset();
       button.textContent = 'Thank you. We will be in touch.';
     })

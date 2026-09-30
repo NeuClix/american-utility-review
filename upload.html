@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Upload your bills | American Utility Review</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Securely upload utility bills for your free American Utility Review bill review.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a href="/" aria-label="American Utility Review home"><img class="site-header__logo" src="logo.png" alt="American Utility Review" width="197" height="48"></a>
+  <div class="header-actions">
+    <a href="/#contact" class="btn btn--primary header-cta"><span class="header-cta__long">Request a free bill review</span><span class="header-cta__short">Free bill review</span></a>
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><span class="nav-toggle__bars"></span></button>
+  </div>
+  <nav class="site-nav" id="site-nav" aria-label="Main">
+    <a href="/#services">Services</a>
+    <a href="/#process">Process</a>
+    <a href="/#savings">Results</a>
+    <a href="/refer.html">Refer &amp; earn</a>
+    <a href="/#contact" class="btn btn--primary nav-cta">Request a free bill review</a>
+  </nav>
+</header>
+
+<main>
+<section class="section section--tint dash" id="upload-page">
+  <div class="wrap">
+    <div class="dash-loading" id="up-loading">Loading&hellip;</div>
+
+    <div id="up-error" hidden>
+      <div class="eyebrow">Document upload</div>
+      <h1 class="h2">We couldn&rsquo;t open this upload page</h1>
+      <p class="lede" id="up-error-text"></p>
+      <p class="fine-print">Need help? Email <a href="mailto:steve@neuclix.com">steve@neuclix.com</a>.</p>
+    </div>
+
+    <div id="up-body" hidden>
+      <div class="eyebrow">Your free bill review</div>
+      <h1 class="h2">Thanks<span id="up-name"></span>! Two quick steps to start your review</h1>
+      <p class="lede">Send us your recent utility bills and authorize us to request your records from your utility companies. <span id="up-org"></span></p>
+
+      <div class="dash-grid up-grid">
+        <div class="panel">
+          <h2 class="panel__title"><span class="step-num">1</span> Upload your utility bills</h2>
+          <p class="fine-print up-help">The last 12 months of electric, gas and water/sewer bills is ideal, but any recent bills help us get started. PDFs, photos or scans all work (up to 10&nbsp;MB each).</p>
+          <label class="dropzone" id="dropzone">
+            <input type="file" id="file-input" multiple accept=".pdf,.jpg,.jpeg,.png,.gif,.webp,.heic,.heif,.tif,.tiff,.csv,.xls,.xlsx,.doc,.docx,application/pdf,image/*">
+            <span class="dropzone__title">Drag files here or <u>choose files</u></span>
+            <span class="dropzone__hint">On a phone, you can take photos of paper bills.</span>
+          </label>
+          <ul class="file-list" id="file-list"></ul>
+          <p class="form-msg" id="up-msg" role="status" aria-live="polite"></p>
+          <p class="fine-print"><strong id="up-count">0</strong> file(s) received so far. You can come back to this page any time to add more.</p>
+        </div>
+        <div class="panel">
+          <h2 class="panel__title"><span class="step-num">2</span> Sign the authorization</h2>
+          <p class="fine-print up-help">This letter lets us request your billing history and rate information directly from your utility companies. It doesn&rsquo;t change your service or account.</p>
+          <a class="btn btn--primary up-loa" id="loa-link" target="_blank" rel="noopener">Sign the authorization form</a>
+          <p class="fine-print">Opens in a new tab. Takes about a minute.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2 class="panel__title">How we protect your documents</h2>
+        <ul class="tips">
+          <li>Files go straight to American Utility Review&rsquo;s private, secure storage. Only our auditors can see them.</li>
+          <li>We use your bills only to review your utility costs, and never share or sell them.</li>
+          <li>American Utility Review will never ask for payment information to release a refund.</li>
+        </ul>
+      </div>
+      <p class="fine-print">Keep this page&rsquo;s address private; anyone with it can add files to your review.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer"><span>&copy; American Utility Review</span><span><a href="/referral-terms.html">Referral program terms</a></span></footer>
+<script src="referral-config.js"></script>
+<script src="main.js"></script>
+<script src="upload.js"></script>
+</body>
+</html>
