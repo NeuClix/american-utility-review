@@ -77,6 +77,7 @@ Every request goes to the same `/exec` URL. POST bodies are JSON sent as text/pl
 **Bot handling:** POSTs with a truthy `website` field are silently accepted and ignored. The signup page sets it when the form is sent under 1.5 seconds after page load. The request form uses Web3Forms' `botcheck` checkbox. Don't add hidden text "honeypot" inputs to signup: browser autofill fills them and legitimate signups get dropped.
 
 **Other triggers and functions:**
+
 - `onLeadEdit` (installable onEdit trigger): stamps "Status updated" and emails the referrer on Qualified, Converted, Paid or Not a fit.
 - `onOpen` adds the **AUR** menu; `menuUploadLink` creates or shows a lead's upload link.
 - `setup()` is idempotent. It creates missing tabs, columns and settings, the status dropdown, the docs root folder and the trigger, and hides token columns.

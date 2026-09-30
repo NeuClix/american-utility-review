@@ -9,6 +9,7 @@ This guide is for referral partners: people who introduce businesses and organiz
 American Utility Review (AUR) is a team of independent commercial utility auditors. The business has been reviewing utility bills since 1986 (originally as Utility Review Consultants LLC).
 
 **What AUR does:**
+
 - Reviews electric, natural gas and water/sewer bills for billing errors and overcharges.
 - Checks that the customer is on the proper rate schedule, based on the utility's tariffs and riders.
 - Identifies refunds that may be owed and helps recover them.

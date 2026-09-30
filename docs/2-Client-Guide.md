@@ -9,6 +9,7 @@ This guide is for businesses and organizations requesting a utility bill review 
 American Utility Review is a team of independent commercial utility auditors, reviewing utility bills since 1986 (originally as Utility Review Consultants LLC).
 
 We review your **electric, natural gas and water/sewer bills** to:
+
 - find **billing errors and overcharges**, and refunds you may be owed;
 - confirm you are on the **proper rate** under the utility's tariffs and riders;
 - check **taxes, fees, meter readings and demand charges**;
@@ -27,6 +28,7 @@ Go to **aur.neuclix.com**, click **Request a free bill review**, and enter your 
 
 ### Step 2: Upload your bills
 Right after submitting, you're taken to your **private upload page**.
+
 - Drag files into the box, or tap **choose files**.
 - The **last 12 months** of electric, gas and water/sewer bills is ideal, but a recent month of bills is enough to start.
 - PDFs, photos and scans all work, as do Excel, CSV and Word files, up to **10 MB per file**.
@@ -36,12 +38,19 @@ Right after submitting, you're taken to your **private upload page**.
 
 ### Step 3: Sign the Letter of Authorization
 On the upload page, click **Sign the authorization form**. Your name and company are filled in for you. The form asks for:
+
 - your state, county and city;
 - your name and title, and your company's legal name;
 - your **utility account number(s)** and **service address**;
 - the date, and your typed name as your digital signature.
 
-The Letter of Authorization lets AUR request your billing history and rate information directly from your utility companies. It **does not change your service or your account**, and it doesn't let AUR sign up for or cancel services. You can revoke it at any time with written notice.
+The Letter of Authorization is a limited power of attorney. It lets AUR:
+
+- receive your billing records and history directly from the utility companies serving your area;
+- prepare and sign, in your company's name, the paperwork needed to apply for refunds, exemptions and rate changes, such as rate change requests, billing error refund requests and state sales and use tax exemption certificates;
+- receive correspondence about those applications.
+
+AUR's process is to review findings with you and get your approval before pursuing refunds or changing rates. The authorization stays in effect for **three years** from the date you sign, unless you revoke it earlier with written notice to AUR.
 
 ### Step 4: We review your bills
 Our auditors review your bills and billing history line by line: rates and tariffs, demand charges, meter readings and multipliers, power factor, fuel adjustments, taxes, franchise fees and surcharges.
@@ -81,7 +90,7 @@ Nothing changes without your approval. If you choose to move forward, we pursue 
 
 **I have several locations or accounts.** List every account number and service address on the authorization form, one per line, and upload bills for each.
 
-**Does the authorization change my service?** No. It only allows AUR to request billing and rate information from your utilities.
+**What can AUR do with the authorization?** Obtain your billing history, and handle the paperwork for refunds, exemptions and rate changes on your behalf. We review findings with you and get your approval before acting. You can revoke it anytime in writing.
 
 **Can a school, city or county use AUR?** Yes. Public entities, schools, hospitals and churches are among our clients.
 

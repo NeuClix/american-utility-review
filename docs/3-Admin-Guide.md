@@ -76,15 +76,16 @@ In the Sheet's menu bar: **AUR → Create upload link for selected lead**. Use i
 1. **Check new leads.** Each new request emails you and appears in Leads with status **New**.
 2. **Contact the client.** Reply to the notification email, or use the contact in the row.
 3. **Check documents and authorization.**
-   - Documents: the Documents count and Docs folder link in the row.
-   - Authorization: the Letter of Authorization (Responses) Sheet. Match by name/company. The Referral Code column shows the partner, if any.
+    - Documents: the Documents count and Docs folder link in the row.
+    - Authorization: the Letter of Authorization (Responses) Sheet. Match by name/company. The Referral Code column shows the partner, if any.
 4. **Update the Status as you go:**
-   - **Qualified**: you're reviewing it.
-   - **Converted**: they became a client. Enter the **Reward** amount first, then set the status.
-   - **Paid**: you've paid the partner.
-   - **Not a fit**: close it out.
+    - **Qualified**: you're reviewing it.
+    - **Converted**: they became a client. Enter the **Reward** amount first, then set the status.
+    - **Paid**: you've paid the partner.
+     - **Not a fit**: close it out.
 
-   The partner is emailed automatically at each change (except New). Leads without a referral code don't send partner emails.
+    The partner is emailed automatically at each change (except New). Leads without a referral code don't send partner emails.
+
 5. **Add notes** in the Notes column for your own tracking.
 
 **Tip:** set the Reward before changing Status to Converted, so the partner's dashboard shows the right amount.
@@ -94,6 +95,7 @@ In the Sheet's menu bar: **AUR → Create upload link for selected lead**. Use i
 ## 4. Collecting documents from anyone
 
 For a client who called, emailed, or was referred in person:
+
 1. In **Leads**, add a row with at least their **Name** and **Organization** (and Referral code if a partner sent them).
 2. Click anywhere in that row.
 3. Choose **AUR → Create upload link for selected lead**.
@@ -125,6 +127,7 @@ Their files appear in AUR Client Documents › *Organization - date*, and the ro
 ## 6. Partner marketing kit
 
 Every partner dashboard has a **Marketing kit**:
+
 - **Personal flyer:** automatic, with the partner's own QR code and link. Nothing to maintain.
 - **Shared materials:** files in the website's `partner-kit` folder, listed in `partner-kit/kit.json`. They can be generated from the AUR NotebookLM notebook with `tools/notebooklm_partner_kit.py`, run from a computer logged in to NotebookLM. **Review every file before publishing:** no promised savings, no invented statistics, no client names without permission.
 
@@ -160,6 +163,7 @@ Every partner dashboard has a **Marketing kit**:
 ## 9. Compliance reminders
 
 This is general guidance, not legal advice.
+
 - **Savings and refund claims** on the website need records behind them (FTC rules). Date and document case results; don't promise or guarantee savings.
 - **Client names and logos:** get written permission before publishing.
 - **"Free" offers** must state the fee terms clearly.
