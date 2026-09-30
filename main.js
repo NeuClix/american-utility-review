@@ -77,6 +77,12 @@ if (contactForm) contactForm.addEventListener('submit', function (e) {
     .then(function (upload) {
       // Next step: the private page for uploading bills and signing the authorization
       if (upload) {
+        // Remember details on this device so the upload page can pre-fill the authorization form
+        try {
+          localStorage.setItem('aur_lead_' + upload, JSON.stringify({
+            name: form.elements.name.value, company: form.elements.organization.value, code: AUR_REF.load()
+          }));
+        } catch (x) {}
         location.href = 'upload.html?u=' + encodeURIComponent(upload);
         return;
       }

@@ -35,11 +35,28 @@
     if (d.organization) $('up-org').textContent = 'This review is for ' + d.organization + '.';
     count = d.count || 0;
     $('up-count').textContent = count;
-    if (d.loa_url) $('loa-link').href = d.loa_url;
+    if (d.loa_url) $('loa-link').href = loaLink(d);
     else $('loa-link').hidden = true;
   }).catch(function () {
     fail('We couldn’t load this page. Please refresh in a moment.');
   });
+
+  // Authorization form link, pre-filled with the name, company and referral code when known
+  function loaLink(d) {
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem('aur_lead_' + token) || '{}') || {}; } catch (x) {}
+    var fields = (window.AUR_REFERRAL && AUR_REFERRAL.LOA_FIELDS) || {};
+    var values = {
+      name: saved.name || '',
+      company: saved.company || d.organization || '',
+      code: saved.code || AUR_REF.load()
+    };
+    var params = ['usp=pp_url'];
+    Object.keys(fields).forEach(function (k) {
+      if (values[k]) params.push(fields[k] + '=' + encodeURIComponent(values[k]));
+    });
+    return d.loa_url.split('?')[0] + (params.length > 1 ? '?' + params.join('&') : '');
+  }
 
   function typeOf(file) {
     if (file.type) return file.type;

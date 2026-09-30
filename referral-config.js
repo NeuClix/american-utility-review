@@ -4,7 +4,10 @@
 window.AUR_REFERRAL = {
   API: 'https://script.google.com/macros/s/AKfycbxAq-Girm47qoD-Obsm3PrdGILpM1Lp7LfhLBV7Vzguh_ykj5x2-nxOykELWJLQgpKM/exec',
   // How long a referral link is remembered on a visitor's device, in days
-  COOKIE_DAYS: 90
+  COOKIE_DAYS: 90,
+  // Letter of Authorization (Google Form) question IDs used to pre-fill it from the upload page.
+  // From the form's "Get pre-filled link": entry.NUMBER for each question.
+  LOA_FIELDS: { name: 'entry.1492896387', company: 'entry.1731655679', code: 'entry.26090282' }
 };
 
 // Shared helpers for the referral pages and the main site
