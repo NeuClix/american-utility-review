@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free utility bill review | American Utility Review</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #0a2240; --blue: #0d6fb8; --red: #c41e2e; --slate: #435463; --tint: #f4f7fa; --line: #d5dde6; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #e9eef3; font-family: 'Public Sans', sans-serif; color: var(--navy); }
+  .toolbar { display: flex; justify-content: center; gap: 12px; padding: 16px; }
+  .toolbar button, .toolbar a {
+    font: inherit; font-weight: 700; padding: 12px 22px; border-radius: 2px; cursor: pointer; text-decoration: none;
+    border: 2px solid var(--navy); background: #fff; color: var(--navy);
+  }
+  .toolbar .primary { background: var(--red); border-color: var(--red); color: #fff; }
+  .sheet {
+    width: 8.5in; min-height: 11in; margin: 0 auto 32px; background: #fff; box-shadow: 0 6px 24px rgba(10,34,64,.15);
+    display: flex; flex-direction: column;
+  }
+  .top { padding: .55in .6in .35in; border-top: 10px solid var(--red); }
+  .top img { height: 56px; display: block; }
+  .hero { background: var(--navy); color: #fff; padding: .45in .6in; }
+  .kicker { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #7fb8ea; }
+  h1 { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 40px; line-height: 1.1; margin: 10px 0 14px; }
+  .hero p { font-size: 17px; line-height: 1.5; color: #cfdcec; margin: 0; }
+  .body { padding: .4in .6in; display: grid; grid-template-columns: 1.3fr 1fr; gap: .4in; flex: 1; }
+  h2 { font-size: 15px; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); margin: 0 0 12px; }
+  ul { margin: 0 0 22px; padding-left: 20px; }
+  li { font-size: 15.5px; line-height: 1.5; margin-bottom: 6px; }
+  .steps { counter-reset: s; list-style: none; padding: 0; }
+  .steps li { counter-increment: s; display: flex; gap: 10px; }
+  .steps li::before { content: counter(s); flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--red); color: #fff; font-size: 13px; font-weight: 700; display: grid; place-items: center; margin-top: 1px; }
+  .qr-box { border: 2px solid var(--navy); padding: 22px; text-align: center; align-self: start; }
+  .qr-box h3 { margin: 0 0 12px; font-size: 20px; }
+  #qr { display: flex; justify-content: center; margin: 0 auto 12px; }
+  #qr img, #qr canvas { width: 190px; height: 190px; }
+  .url { font-weight: 700; font-size: 14px; word-break: break-all; color: var(--blue); }
+  .foot { padding: .25in .6in .45in; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; font-size: 12.5px; color: var(--slate); line-height: 1.5; }
+  .shared { font-weight: 600; color: var(--navy); }
+  @page { size: letter; margin: 0; }
+  @media print {
+    body { background: #fff; }
+    .toolbar { display: none; }
+    .sheet { box-shadow: none; margin: 0; width: auto; min-height: 100vh; }
+    .hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .steps li::before, .top { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+  @media screen and (max-width: 860px) {
+    .sheet { width: auto; min-height: 0; margin: 0 12px 24px; }
+    .body { grid-template-columns: 1fr; }
+    h1 { font-size: 30px; }
+  }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <button type="button" class="primary" onclick="window.print()">Print or save as PDF</button>
+  <a href="partner.html">Back to dashboard</a>
+</div>
+
+<div class="sheet">
+  <div class="top"><img src="logo.png" alt="American Utility Review"></div>
+  <div class="hero">
+    <div class="kicker">Commercial utility bill review</div>
+    <h1>Is your business overpaying for utilities?</h1>
+    <p>Independent auditors since 1986 review your electric, gas and water/sewer bills for billing errors, overcharges and better rates, and help recover refunds.</p>
+  </div>
+  <div class="body">
+    <div>
+      <h2>What we look for</h2>
+      <ul>
+        <li>Refunds owed for overcharges and billing errors</li>
+        <li>Whether you are on the proper rate schedule</li>
+        <li>Tariffs, riders, taxes and fees that apply to you</li>
+        <li>Meter and demand reading errors</li>
+      </ul>
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li>Request a free review and send a recent month of bills</li>
+        <li>Sign an authorization so we can request your billing history</li>
+        <li>We review it and share what we find</li>
+        <li>You approve any action before anything changes</li>
+      </ol>
+      <h2>Who we help</h2>
+      <p style="font-size:15px;line-height:1.55;margin:0">Manufacturers, restaurants, hotels, hospitals, schools, churches, farms, oil &amp; gas, retail and more.</p>
+    </div>
+    <div class="qr-box">
+      <h3>Scan for a free bill review</h3>
+      <div id="qr"></div>
+      <div class="url" id="url"></div>
+      <p style="font-size:13px;color:var(--slate);margin:12px 0 0">No upfront cost to request a review.</p>
+    </div>
+  </div>
+  <div class="foot">
+    <span class="shared" id="shared"></span>
+    <span>American Utility Review &middot; aur.neuclix.com</span>
+  </div>
+</div>
+
+<script src="qrcode.min.js"></script>
+<script>
+  (function () {
+    var p = new URLSearchParams(location.search);
+    var code = (p.get('code') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 12);
+    var name = (p.get('name') || '').slice(0, 60);
+    var link = location.origin + '/' + (code ? '?ref=' + code : '');
+    document.getElementById('url').textContent = link.replace(/^https?:\/\//, '');
+    if (name) {
+      document.getElementById('shared').textContent = 'Shared by ' + name + ', an AUR referral partner who may earn a referral fee.';
+    }
+    new QRCode(document.getElementById('qr'), { text: link, width: 190, height: 190, colorDark: '#0a2240', colorLight: '#ffffff', correctLevel: QRCode.CorrectLevel.M });
+  })();
+</script>
+</body>
+</html>

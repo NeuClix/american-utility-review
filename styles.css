@@ -618,3 +618,23 @@ a:hover { color: var(--navy); }
 .install-panel[hidden] { display: none; }
 .install-panel .fine-print { margin: 0; }
 .install-panel button { border: 0; font: inherit; font-weight: 700; cursor: pointer; }
+
+/* ---------- Partner marketing kit ---------- */
+.kit { display: grid; gap: 12px; margin-top: 12px; }
+#kit-items:empty { display: none; }
+.kit-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  background: var(--tint);
+}
+.kit-item--flyer { border-left: 4px solid var(--red); }
+.kit-item h3 { margin: 0; font-size: 16px; }
+.kit-item .fine-print { margin: 4px 0 0; }
+.kit-item > div { min-width: 0; flex: 1; }
+.kit-item audio, .kit-item video, .kit-item img { display: block; width: 100%; max-width: 480px; margin-top: 10px; }
+.kit-item .btn { flex: none; }
+@media (max-width: 640px) { .kit-item { flex-direction: column; } }

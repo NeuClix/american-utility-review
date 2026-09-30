@@ -120,6 +120,7 @@
     $('ref-empty').hidden = d.referrals.length > 0;
 
     setupInstall();
+    setupKit(d);
     setupSharing(d.link);
     setupQr(d.link, d.code);
     setupTemplates(d.link);
@@ -167,6 +168,58 @@
       $('install-btn').hidden = true;
       $('install-text').innerHTML = 'On iPhone: tap the <strong>Share</strong> button in Safari, then <strong>Add to Home Screen</strong>.';
     }
+  }
+
+  // Marketing kit: personal flyer plus shared materials listed in partner-kit/kit.json
+  function setupKit(d) {
+    $('flyer-link').href = 'flyer.html?code=' + encodeURIComponent(d.code) + '&name=' + encodeURIComponent(d.name || '');
+    var box = $('kit-items');
+    box.innerHTML = '';
+    fetch('partner-kit/kit.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (kit) {
+      (kit.items || []).forEach(function (it) {
+        if (!it || !it.file) return;
+        var src = 'partner-kit/' + it.file;
+        var item = document.createElement('div');
+        item.className = 'kit-item';
+        var text = document.createElement('div');
+        var h = document.createElement('h3');
+        h.textContent = it.title || it.file;
+        text.appendChild(h);
+        if (it.description) {
+          var p = document.createElement('p');
+          p.className = 'fine-print';
+          p.textContent = it.description;
+          text.appendChild(p);
+        }
+        if (it.type === 'audio') {
+          var audio = document.createElement('audio');
+          audio.controls = true;
+          audio.preload = 'none';
+          audio.src = src;
+          text.appendChild(audio);
+        } else if (it.type === 'video') {
+          var video = document.createElement('video');
+          video.controls = true;
+          video.preload = 'none';
+          video.src = src;
+          text.appendChild(video);
+        } else if (it.type === 'image') {
+          var img = document.createElement('img');
+          img.src = src;
+          img.alt = it.title || '';
+          img.loading = 'lazy';
+          text.appendChild(img);
+        }
+        item.appendChild(text);
+        var a = document.createElement('a');
+        a.className = 'btn btn--outline-dark';
+        a.href = src;
+        a.download = '';
+        a.textContent = 'Download';
+        item.appendChild(a);
+        box.appendChild(item);
+      });
+    }).catch(function () {});
   }
 
   function setupSharing(link) {
