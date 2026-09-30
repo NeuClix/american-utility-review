@@ -21,6 +21,7 @@
 
   /* ---------- signup ---------- */
   var signup = $('signup-form');
+  var loadedAt = Date.now();
   if (signup) signup.addEventListener('submit', function (e) {
     e.preventDefault();
     var f = signup.elements;
@@ -33,7 +34,9 @@
     AUR_REF.post({
       action: 'signup',
       name: f.name.value, email: f.email.value, phone: f.phone.value, organization: f.organization.value,
-      public_employee: f.public_employee.checked, agree: f.agree.checked, website: f.website.value
+      public_employee: f.public_employee.checked, agree: f.agree.checked,
+      // Spam trap: a hidden field only bots fill in, plus a minimum time on the page
+      website: (f.aur_trap_x9.value || Date.now() - loadedAt < 1500) ? 'bot' : ''
     }).then(function (r) {
       if (!r.ok) throw new Error(r.error);
       if (r.token) {
@@ -42,6 +45,7 @@
         return;
       }
       button.disabled = false;
+      if (!r.existing) throw new Error('');
       msg(signup, 'You’re already signed up. We’ve emailed your dashboard link to ' + f.email.value + '.');
     }).catch(function (err) {
       button.disabled = false;
