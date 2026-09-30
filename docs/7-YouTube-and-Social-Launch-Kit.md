@@ -55,7 +55,7 @@ In this video:
 • How to sign up in about a minute and get your personal referral link
 • Your dashboard: track every referral from New to Qualified, Converted and Paid
 • Your marketing kit: QR code, printable flyer and ready-made messages
-• Program rules: who can join, self-referrals and required disclosure
+• Program rules: who can join and the required disclosure
 • How the 90-day referral credit works and when rewards are paid
 • Who to share with: restaurants, hotels, manufacturers, farms, accountants and more
 
@@ -78,7 +78,7 @@ Chapters
 About American Utility Review
 Independent commercial utility auditors since 1986. We review electric, natural gas and water/sewer bills for billing errors, overcharges and better rates, and help recover refunds. No upfront cost: AUR is paid a share of refunds and savings only after the client receives them.
 
-Important: Rewards are paid only when a referral becomes an AUR client and AUR has received the client's payment. Earnings aren't guaranteed. Savings figures mentioned are individual examples; results vary. Employees and officials of public entities can't earn rewards. Partners must disclose that they may earn a referral fee.
+Important: Rewards are paid only when a referral becomes an AUR client and AUR has received the client's payment. Earnings aren't guaranteed. Savings figures mentioned are individual examples; results vary. Clubs, booster groups and nonprofits are welcome to join as a fundraiser. Partners must disclose that they may earn a referral fee.
 
 Narration created with AI tools.
 
@@ -163,7 +163,7 @@ Chapters
 About American Utility Review
 Independent commercial utility auditors since 1986, reviewing electric, natural gas and water/sewer bills for billing errors and overcharges. No upfront cost: AUR is paid a share of refunds and savings only after the client receives them.
 
-Important: Rewards are paid only when a referral becomes an AUR client and AUR has received the client's payment. Earnings aren't guaranteed. Savings figures mentioned are individual examples; results vary. Employees and officials of public entities can't earn rewards. Partners must disclose that they may earn a referral fee.
+Important: Rewards are paid only when a referral becomes an AUR client and AUR has received the client's payment. Earnings aren't guaranteed. Savings figures mentioned are individual examples; results vary. Clubs, booster groups and nonprofits are welcome to join as a fundraiser. Partners must disclose that they may earn a referral fee.
 
 Narration created with AI tools.
 
@@ -243,7 +243,7 @@ If you know business owners, plant managers, hotel operators, farmers or account
 
 Signing up takes about a minute: https://aur.neuclix.com/refer.html
 
-Earnings aren't guaranteed; see the program terms. Public employees can't earn rewards.
+Earnings aren't guaranteed; see the program terms. Clubs and nonprofits welcome.
 
 #ReferralProgram #SmallBusiness #Utilities #Networking
 ```

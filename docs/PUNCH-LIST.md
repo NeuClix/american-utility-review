@@ -3,6 +3,8 @@
 Last updated: September 30, 2026. ✅ = done · ⬜ = to do · [Steve] = needs Steve or AUR
 
 ## Next up
+- ⬜ [Steve/AUR] **Confirm the school-district rule:** a club or booster group may refer the school district its members work for, with the reward paid to the group (not a person). Some districts have their own rules; AUR should be comfortable with this.
+- ⬜ [Steve] **Videos mention the old rules** ("no self-referrals", "public employees can't join"). The website and terms now allow self-referrals and clubs. Regenerate in NotebookLM when convenient; the YouTube descriptions have the updated line.
 - ⬜ [Steve] **Publish the referral videos on YouTube** using **7. YouTube and Social Launch Kit** (titles, descriptions, chapters, tags, captions, thumbnails), then send Claude the YouTube links to switch the website's video players.
 - ⬜ [Steve] **Create the partner campaign in NotebookLM:** video, blog post, social posts, LinkedIn posts. Use the prompts in **6. Partner Campaign – NotebookLM Prompts**, review with its checklist, then put the files in Drive › AUR Partner Campaign (or paste them to Claude) to publish to partner dashboards.
 - ⬜ [Steve] **Generate partner marketing materials from NotebookLM.** Run `tools/notebooklm_partner_kit.py` in Claude Code on Steve's computer (logged in to NotebookLM), review the files, then commit and push `partner-kit/`. Notebook: `5fa38cf3-d35f-439d-bc21-6d1e899a19f8`. Add the finished documentation as sources first.
@@ -33,6 +35,7 @@ Last updated: September 30, 2026. ✅ = done · ⬜ = to do · [Steve] = needs S
 - ✅ Private document upload page → Google Drive folder per client
 - ✅ Letter of Authorization form linked and pre-filled (name, company, referral code)
 - ✅ Installable app (PWA) that opens to the partner dashboard
+- ✅ Program opened to clubs, booster groups, PTOs, churches and charities as fundraisers (rewards paid to the organization); self-referrals allowed; public-employee rule narrowed to referring their own employer
 - ✅ Referral videos trimmed (NotebookLM ending removed), on the sign-up page and in partner dashboards; blog post "How to Earn Referral Rewards"; YouTube and social launch kit
 - ✅ Partner campaign setup: NotebookLM prompts (video, blog, social, LinkedIn), blog pages with partner tracking, share-ready posts and captions filled in with each partner's link
 - ✅ Partner marketing kit: personal printable flyer plus a slot for NotebookLM materials

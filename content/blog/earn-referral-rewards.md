@@ -43,8 +43,9 @@ Your reward is released when your referral becomes an AUR client **and AUR has r
 
 ## The rules
 
-- **Anyone 18 or older can join**, except employees and officials of public entities such as schools, cities, counties, state agencies, and public hospitals and universities. Public organizations are welcome to request reviews for themselves; their staff just can't earn rewards.
-- **No self-referrals:** you can't refer yourself or an organization you own or control.
+- **Anyone 18 or older can join, and so can organizations:** school clubs and booster groups, PTOs, scout troops, churches, charities and businesses. Rewards for a group are paid to the group.
+- **Own a business?** You can refer it yourself.
+- **One limit:** if you work for a public entity (a school district, city, county or state agency), you can't personally earn a reward for referring your own employer. Your club or booster group can.
 - **Always disclose** that you may earn a referral fee when you share your link. It's required by U.S. advertising rules, and the ready-made messages already include it.
 - **Never promise or guarantee** savings or refund amounts, and don't present yourself as an AUR employee. You're an independent referral partner.
 
@@ -55,7 +56,7 @@ Focus on organizations with large utility bills:
 - restaurants and hotels;
 - manufacturers, processors and plant or facility managers;
 - farms and ranches;
-- hospitals, schools and churches (the organization can request a review; see the rule above about public employees);
+- hospitals, schools and churches;
 - **accountants, bookkeepers and property managers**, who see many clients' utility bills every month.
 
 A personal text or email to someone you know works far better than a general post.

@@ -38,7 +38,7 @@ This guide is for the people who run AUR's website, leads, documents and referra
 | **Reward** | Partner reward amount for this lead (numbers only, e.g. 500) |
 | Status updated | Filled in automatically when Status changes |
 | Notes | Your notes |
-| Flag | "Self-referral?" if the contact matches the partner's own email |
+| Flag | "Self-referral?" if the contact matches the partner's own email (for your information; self-referrals are allowed) |
 | Documents | Number of files uploaded |
 | Docs folder | Link to the client's Drive folder |
 | Upload token | Hidden. Powers the client's private upload link. Don't edit. |
@@ -49,7 +49,7 @@ This guide is for the people who run AUR's website, leads, documents and referra
 | Code | The partner's referral code (in their link) |
 | Token | Hidden. Powers their private dashboard link. Don't edit. |
 | Name, Email, Phone, Organization | From signup |
-| Public employee | Always "No" (public employees are blocked at signup) |
+| Public employee | Not used (always "No") |
 | Joined | Signup date |
 | **Active** | Yes/No. Set to **No** to stop crediting a partner. |
 | **Payout notes** | W-9 received? Payment method, dates and amounts paid |
@@ -112,8 +112,9 @@ Their files appear in AUR Client Documents › *Organization - date*, and the ro
 - **New partners** sign up themselves at aur.neuclix.com/refer.html. You get a "New referral partner" email.
 - **Pause or remove a partner:** set **Active** to **No**. They stop earning credit, and new requests using their code come in as direct leads. **Don't delete partner rows.** Deleting one permanently breaks their dashboard link and code; if that happens, re-enter the row exactly as it was, with the same Code and Token.
 - **Partner lost their dashboard link:** they can re-enter their email on the signup page and it's emailed again. You can also build it: `aur.neuclix.com/partner.html?t=` followed by their Token (unhide column B to see it).
-- **Self-referrals:** check the Flag column. Rewards aren't paid for self-referrals.
-- **Public employees** can't join. The signup form blocks them if they tick the box.
+- **Self-referrals are allowed.** A business owner who refers their own business earns the reward. The Flag column just marks them.
+- **Clubs and organizations:** when the Organization column holds a club, booster group or charity, pay the organization and collect a W-9 in its name.
+- **Public employees** can join and earn rewards, except for referring the public entity they work for. If a lead is a school district, city or county, check whether the partner works there; if so, the reward can go to their club or booster group, not to them personally.
 
 ### Paying partners
 1. When a referral is **Converted** and the client has paid AUR, pay the partner.
@@ -169,7 +170,7 @@ This is general guidance, not legal advice.
 - **Client names and logos:** get written permission before publishing.
 - **"Free" offers** must state the fee terms clearly.
 - **Partners must disclose** that they may earn a referral fee. The tools include this automatically.
-- **Public employees** can't be paid for referrals (conflict of interest and kickback risk).
+- **Public employees** can't be paid personally for referring their own employer (conflict of interest and kickback risk). Paying a club or booster group instead is cleaner; confirm AUR is comfortable with that for school districts, since some districts have their own rules.
 - **Filing with the Missouri PSC** on a client's behalf requires a Missouri-licensed attorney. **Sales tax refund claims** handled for a client require the client's signed Missouri DOR Form 2827 (power of attorney).
 
 ---

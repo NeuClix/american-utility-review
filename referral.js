@@ -34,7 +34,7 @@
     AUR_REF.post({
       action: 'signup',
       name: f.name.value, email: f.email.value, phone: f.phone.value, organization: f.organization.value,
-      public_employee: f.public_employee.checked, agree: f.agree.checked,
+      public_employee: false, agree: f.agree.checked,
       // Bot check: real people take more than a second to fill in the form.
       // (No hidden trap field here: browser autofill fills those in.)
       website: Date.now() - loadedAt < 1500 ? 'bot' : ''

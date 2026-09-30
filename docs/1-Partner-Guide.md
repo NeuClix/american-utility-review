@@ -37,8 +37,9 @@ The current reward is shown at the top of your dashboard and on the Refer & Earn
 ## 3. Who can join
 
 - Anyone 18 or older can join.
-- **Employees and officials of public entities cannot receive rewards.** This includes schools, cities, counties, state agencies, and public hospitals and universities, and applies to referring any organization. It prevents conflicts of interest. Public employees are still welcome to request a free review for their own organization.
-- You cannot refer yourself or an organization you own or control.
+- **Organizations can join too:** school clubs and booster groups (band, math club, FFA), PTOs, scout troops, churches, charities and businesses. Sign up with the organization's name in the Organization box; its rewards are paid to the organization (W-9 in the organization's name).
+- **You can refer your own business** or an organization you own.
+- **One limit:** if you work for a public entity (a school district, city, county, state agency, or public hospital or university), you can't *personally* earn a reward for referring the entity you work for. A club or booster group you belong to can, with the reward paid to the group. Public employees can earn rewards for referring anyone else.
 - AUR may decline or close any partner account.
 
 ---
@@ -46,8 +47,8 @@ The current reward is shown at the top of your dashboard and on the Refer & Earn
 ## 4. Signing up
 
 1. Go to **aur.neuclix.com/refer.html** and scroll to **Get your referral link**.
-2. Enter your full name and email. Phone and company are optional.
-3. Leave "I work for a school, city, county…" unchecked unless it applies to you. If it does, you can't join.
+2. Enter your full name and email. Phone is optional.
+3. Signing up for a club or group? Put its name in **Organization, club or business**.
 4. Tick the box to agree to the program terms, including telling people you may earn a referral fee.
 5. Click **Get my link**. You land on your dashboard, and a welcome email with your private dashboard link is sent to you. If you don't see it, check your spam folder.
 
@@ -114,7 +115,6 @@ The app remembers you on each device where you've opened your dashboard link. To
 - If they request a review within those 90 days, on the same device and browser, the referral is credited to you, even if they come back to the website later without the link.
 - If they open another partner's link afterward, the most recent link wins.
 - If they switch devices, clear their browser data, or were already in contact with AUR, credit may not be recorded. AUR decides credit in good faith.
-- Referrals from your own email address are flagged as possible self-referrals.
 
 **Tip:** ask the person to use your link when they request the review, even if they've visited the website before.
 
@@ -164,9 +164,11 @@ The app remembers you on each device where you've opened your dashboard link. To
 
 **Someone said they used my link but it's not on my dashboard.** They may have used a different device or browser, cleared their browser data, or come to the website without your link more than 90 days after opening it. Contact AUR with the details.
 
-**Can I refer my own business?** No, self-referrals don't earn rewards. You can still request a free review for your business.
+**Can I refer my own business?** Yes. Refer it through your own link and you earn the reward like any other referral.
 
-**I work for a school district. Can I join?** You can't receive rewards, but your school can request a free review.
+**I work for a school district. Can I join?** Yes. You can earn rewards for referring any business or organization except the district you work for. Your club or booster group can refer the district, with the reward paid to the group.
+
+**Can our band boosters (or math club, FFA, PTO, scout troop) join as a fundraiser?** Yes. Sign up with the group's name; rewards are paid to the group. Share the link with parents, members and local businesses, just like any other fundraiser.
 
 **Who sees my information?** AUR uses your details only to run the program and pay rewards. Your dashboard shows each referral's organization and status, but not their contact details or bills.
 
