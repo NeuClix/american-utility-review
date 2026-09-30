@@ -265,12 +265,22 @@
           if (it.type === 'embed') {
             a.target = '_blank';
             a.rel = 'noopener';
-            a.textContent = 'Open / download';
+            a.textContent = it.download ? 'Open' : 'Open / download';
           } else {
             a.download = '';
             a.textContent = 'Download';
           }
           actions.appendChild(a);
+          if (it.download) {
+            // The original file, for uploading natively to LinkedIn, Facebook, etc.
+            var dl = document.createElement('a');
+            dl.className = 'btn btn--outline-dark';
+            dl.href = it.download;
+            dl.target = '_blank';
+            dl.rel = 'noopener';
+            dl.textContent = 'Download video';
+            actions.appendChild(dl);
+          }
         }
         if (it.caption) {
           var copyCap = document.createElement('button');
