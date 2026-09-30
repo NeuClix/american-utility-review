@@ -3,6 +3,7 @@
 Last updated: September 30, 2026. ✅ = done · ⬜ = to do · [Steve] = needs Steve or AUR
 
 ## Next up
+- ⬜ [Steve] **Create the partner campaign in NotebookLM:** video, blog post, social posts, LinkedIn posts. Use the prompts in **6. Partner Campaign – NotebookLM Prompts**, review with its checklist, then put the files in Drive › AUR Partner Campaign (or paste them to Claude) to publish to partner dashboards.
 - ⬜ [Steve] **Generate partner marketing materials from NotebookLM.** Run `tools/notebooklm_partner_kit.py` in Claude Code on Steve's computer (logged in to NotebookLM), review the files, then commit and push `partner-kit/`. Notebook: `5fa38cf3-d35f-439d-bc21-6d1e899a19f8`. Add the finished documentation as sources first.
 - ⬜ [Steve] **Decide the referral reward** and put it in Settings › `reward_text` (e.g. "$500 for every audit that becomes a client").
 - ⬜ [Steve] **Authorization form tweaks:** Referral Code optional, State dropdown, Utility Account Number as a paragraph with "one per line", soften "Over 70% of the time" unless documented.
@@ -31,4 +32,5 @@ Last updated: September 30, 2026. ✅ = done · ⬜ = to do · [Steve] = needs S
 - ✅ Private document upload page → Google Drive folder per client
 - ✅ Letter of Authorization form linked and pre-filled (name, company, referral code)
 - ✅ Installable app (PWA) that opens to the partner dashboard
+- ✅ Partner campaign setup: NotebookLM prompts (video, blog, social, LinkedIn), blog pages with partner tracking, share-ready posts and captions filled in with each partner's link
 - ✅ Partner marketing kit: personal printable flyer plus a slot for NotebookLM materials

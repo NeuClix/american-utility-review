@@ -73,7 +73,11 @@ A QR code of your link. Use **Download QR code** to save it for business cards, 
 
 ### Marketing kit
 - **Your personal flyer:** a one-page flyer with your QR code and link, ready to print or save as a PDF to email. It includes a line saying you are an AUR referral partner who may earn a referral fee.
-- **Shared materials:** approved materials from AUR, such as audio explainers, infographics, slides and FAQ briefs, to download and share.
+- **Shared materials:** approved materials from AUR, such as a short video, audio explainers, infographics, slides and FAQ briefs, to download and share. Items with a **Copy caption** button come with post text that already includes your personal link.
+- **Blog articles:** articles on aur.neuclix.com written for business owners. **Copy my link** gives you the article's address with your code attached, so anyone who reads it and then requests a review is credited to you.
+
+### Share-ready posts
+Posts for LinkedIn, Facebook, Instagram and X, already filled in with your link. Copy one, paste it into the app, and attach the matching video or image from your Marketing kit. Instagram doesn't allow links in posts, so put your link in your bio or a story link sticker. This section appears once AUR has published posts.
 
 ### Ready-made messages
 Copy-and-send messages for a text, an email to a business owner, a LinkedIn or Facebook post, and a note for accountants and bookkeepers. Each includes the required note that you may earn a referral fee. Replace [Name] and [Your name] before sending.

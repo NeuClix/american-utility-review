@@ -30,10 +30,12 @@ For developers maintaining aur.neuclix.com. Covers architecture, files, configur
 | `qrcode.min.js` | QRCode.js (MIT), self-hosted |
 | `sw.js` | Service worker (bump `VERSION` when the cached file list changes) |
 | `manifest.webmanifest` | PWA manifest (`start_url` /partner.html?source=app) |
-| `partner-kit/kit.json` | List of shared marketing materials shown on dashboards |
+| `partner-kit/kit.json` | Marketing materials shown on dashboards. `items`: files in `partner-kit/` (type audio, image, pdf, video, slides, doc; optional `caption`) or site pages (`type: "page"`, `url`), which get a "Copy my link" button with `?ref=CODE`. `posts`: share-ready posts `{platform, title, text}`. `{link}`, `{code}` and `{name}` in captions and posts are replaced per partner. |
+| `blog/` | Blog articles partners share. Made with `tools/publish_blog_post.py`. |
 | `apps-script/Code.gs` | Backend source (paste into the Sheet's Apps Script) |
 | `apps-script/SETUP.md` | Backend setup and update steps |
 | `tools/notebooklm_partner_kit.py` | Generates marketing materials from NotebookLM (run locally) |
+| `tools/publish_blog_post.py` | Turns a Markdown article into `blog/<slug>.html` (site header, request button, disclosure, Open Graph tags) and adds it to `kit.json` |
 | `docs/` | Documentation (not deployed) |
 | Icons | `logo.png`, `favicon-32.png`, `icon-192.png`, `icon-512.png`, `icon-maskable-512.png`, `apple-touch-icon.png` |
 

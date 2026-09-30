@@ -129,6 +129,7 @@ Their files appear in AUR Client Documents › *Organization - date*, and the ro
 Every partner dashboard has a **Marketing kit**:
 
 - **Personal flyer:** automatic, with the partner's own QR code and link. Nothing to maintain.
+- **Campaign pieces (video, blog post, social and LinkedIn posts):** made in NotebookLM with the prompts in **6. Partner Campaign – NotebookLM Prompts**, then published to the website. Posts and captions contain `{link}`, which each partner's dashboard replaces with their own link. Blog posts live at aur.neuclix.com/blog/.
 - **Shared materials:** files in the website's `partner-kit` folder, listed in `partner-kit/kit.json`. They can be generated from the AUR NotebookLM notebook with `tools/notebooklm_partner_kit.py`, run from a computer logged in to NotebookLM. **Review every file before publishing:** no promised savings, no invented statistics, no client names without permission.
 
 ---

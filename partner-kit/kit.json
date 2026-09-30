@@ -1,4 +1,5 @@
 {
-  "note": "Marketing materials shown on every partner dashboard. Add a file to this folder and list it here. type: audio | image | pdf | video | slides | doc",
-  "items": []
+  "note": "Marketing materials shown on every partner dashboard. items: files in this folder (type: audio | image | pdf | video | slides | doc) or site pages (type: page, url: /blog/...). Optional caption: text partners copy with the file. posts: share-ready posts {platform, title, text}. In captions and posts, {link} {code} {name} become the partner's own link, code and name.",
+  "items": [],
+  "posts": []
 }

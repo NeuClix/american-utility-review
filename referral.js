@@ -124,6 +124,17 @@
     setupSharing(d.link);
     setupQr(d.link, d.code);
     setupTemplates(d.link);
+    setupPosts(d);
+  }
+
+  // Fill a kit text with this partner's details: {link}, {code}, {name}
+  function fill(text, d) {
+    return String(text || '').replace(/\{link\}/g, d.link).replace(/\{code\}/g, d.code).replace(/\{name\}/g, d.name || '');
+  }
+  // Add ?ref=CODE to a page on this site so visits are credited to the partner
+  function withRef(url, code) {
+    if (url.charAt(0) === '/') url = location.origin + url;
+    return url + (url.indexOf('?') < 0 ? '?' : '&') + 'ref=' + encodeURIComponent(code);
   }
 
   function copy(text, button) {
@@ -177,13 +188,13 @@
     box.innerHTML = '';
     fetch('partner-kit/kit.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (kit) {
       (kit.items || []).forEach(function (it) {
-        if (!it || !it.file) return;
-        var src = 'partner-kit/' + it.file;
+        if (!it || !(it.file || it.url)) return;
+        var src = it.file ? 'partner-kit/' + it.file : it.url;
         var item = document.createElement('div');
         item.className = 'kit-item';
         var text = document.createElement('div');
         var h = document.createElement('h3');
-        h.textContent = it.title || it.file;
+        h.textContent = it.title || it.file || it.url;
         text.appendChild(h);
         if (it.description) {
           var p = document.createElement('p');
@@ -210,13 +221,48 @@
           img.loading = 'lazy';
           text.appendChild(img);
         }
+        if (it.caption) {
+          var cap = document.createElement('p');
+          cap.className = 'template__text kit-caption';
+          cap.textContent = fill(it.caption, d);
+          text.appendChild(cap);
+        }
         item.appendChild(text);
-        var a = document.createElement('a');
-        a.className = 'btn btn--outline-dark';
-        a.href = src;
-        a.download = '';
-        a.textContent = 'Download';
-        item.appendChild(a);
+        var actions = document.createElement('div');
+        actions.className = 'kit-actions';
+        if (it.type === 'page') {
+          // A page on this site (e.g. a blog post): share it with the partner's code attached
+          var pageLink = withRef(it.url || src, d.code);
+          var open = document.createElement('a');
+          open.className = 'btn btn--outline-dark';
+          open.href = pageLink;
+          open.target = '_blank';
+          open.rel = 'noopener';
+          open.textContent = 'Open';
+          var copyPage = document.createElement('button');
+          copyPage.type = 'button';
+          copyPage.className = 'btn btn--primary';
+          copyPage.textContent = 'Copy my link';
+          copyPage.onclick = function () { copy(pageLink, copyPage); };
+          actions.appendChild(copyPage);
+          actions.appendChild(open);
+        } else {
+          var a = document.createElement('a');
+          a.className = 'btn btn--outline-dark';
+          a.href = src;
+          a.download = '';
+          a.textContent = 'Download';
+          actions.appendChild(a);
+        }
+        if (it.caption) {
+          var copyCap = document.createElement('button');
+          copyCap.type = 'button';
+          copyCap.className = 'btn btn--outline-dark';
+          copyCap.textContent = 'Copy caption';
+          copyCap.onclick = function () { copy(fill(it.caption, d), copyCap); };
+          actions.appendChild(copyCap);
+        }
+        item.appendChild(actions);
         box.appendChild(item);
       });
     }).catch(function () {});
@@ -254,6 +300,42 @@
     };
   }
 
+  // Share-ready posts (LinkedIn, Facebook, Instagram, X, email…) listed in partner-kit/kit.json "posts"
+  function setupPosts(d) {
+    var box = $('posts');
+    var panel = $('posts-panel');
+    box.innerHTML = '';
+    fetch('partner-kit/kit.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (kit) {
+      var posts = (kit.posts || []).filter(function (p) { return p && p.text; });
+      panel.hidden = !posts.length;
+      posts.forEach(function (p) {
+        box.appendChild(templateCard((p.platform ? p.platform + ': ' : '') + (p.title || ''), fill(p.text, d)));
+      });
+    }).catch(function () {});
+  }
+
+  function templateCard(title, text) {
+    var wrap = document.createElement('div');
+    wrap.className = 'template';
+    var head = document.createElement('div');
+    head.className = 'template__head';
+    var h = document.createElement('h3');
+    h.textContent = title;
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'btn btn--outline-dark btn--small';
+    btn.textContent = 'Copy';
+    btn.onclick = function () { copy(text, btn); };
+    head.appendChild(h);
+    head.appendChild(btn);
+    var pre = document.createElement('p');
+    pre.className = 'template__text';
+    pre.textContent = text;
+    wrap.appendChild(head);
+    wrap.appendChild(pre);
+    return wrap;
+  }
+
   function setupTemplates(link) {
     var list = [
       { title: 'Text message', text: 'Hi! Quick tip: American Utility Review does free reviews of business utility bills and often finds overcharges or refunds. No upfront cost. Here’s my link if you want them to take a look: ' + link + ' (Full disclosure: I may earn a referral fee.)' },
@@ -263,26 +345,6 @@
     ];
     var box = $('templates');
     box.innerHTML = '';
-    list.forEach(function (t) {
-      var wrap = document.createElement('div');
-      wrap.className = 'template';
-      var head = document.createElement('div');
-      head.className = 'template__head';
-      var h = document.createElement('h3');
-      h.textContent = t.title;
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'btn btn--outline-dark btn--small';
-      btn.textContent = 'Copy';
-      btn.onclick = function () { copy(t.text, btn); };
-      head.appendChild(h);
-      head.appendChild(btn);
-      var pre = document.createElement('p');
-      pre.className = 'template__text';
-      pre.textContent = t.text;
-      wrap.appendChild(head);
-      wrap.appendChild(pre);
-      box.appendChild(wrap);
-    });
+    list.forEach(function (t) { box.appendChild(templateCard(t.title, t.text)); });
   }
 })();
