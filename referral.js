@@ -214,6 +214,18 @@
           video.preload = 'none';
           video.src = src;
           text.appendChild(video);
+        } else if (it.type === 'embed') {
+          // A video hosted elsewhere (e.g. Google Drive): play it in a frame
+          var frame = document.createElement('div');
+          frame.className = 'video-embed';
+          var iframe = document.createElement('iframe');
+          iframe.src = it.embed;
+          iframe.title = it.title || '';
+          iframe.allow = 'autoplay; fullscreen';
+          iframe.allowFullscreen = true;
+          iframe.loading = 'lazy';
+          frame.appendChild(iframe);
+          text.appendChild(frame);
         } else if (it.type === 'image') {
           var img = document.createElement('img');
           img.src = src;
@@ -250,8 +262,14 @@
           var a = document.createElement('a');
           a.className = 'btn btn--outline-dark';
           a.href = src;
-          a.download = '';
-          a.textContent = 'Download';
+          if (it.type === 'embed') {
+            a.target = '_blank';
+            a.rel = 'noopener';
+            a.textContent = 'Open / download';
+          } else {
+            a.download = '';
+            a.textContent = 'Download';
+          }
           actions.appendChild(a);
         }
         if (it.caption) {

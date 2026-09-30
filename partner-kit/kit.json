@@ -1,5 +1,22 @@
 {
   "note": "Marketing materials shown on every partner dashboard. items: files in this folder (type: audio | image | pdf | video | slides | doc) or site pages (type: page, url: /blog/...). Optional caption: text partners copy with the file. posts: share-ready posts {platform, title, text}. In captions and posts, {link} {code} {name} become the partner's own link, code and name.",
-  "items": [],
+  "items": [
+    {
+      "type": "embed",
+      "url": "https://drive.google.com/file/d/1wvsKjcaEN1EzzaXI1TI7HlQhVBEoHC0p/view",
+      "embed": "https://drive.google.com/file/d/1wvsKjcaEN1EzzaXI1TI7HlQhVBEoHC0p/preview",
+      "title": "Video: The AUR Referral Program (6:42)",
+      "description": "How the program works. Share it with anyone you'd like to recruit as a fellow referral partner.",
+      "caption": "Know people who pay big utility bills? This short video explains American Utility Review's referral program: businesses get a free bill review with no upfront cost, and partners can earn a reward when a referral becomes a client. Sign up here: https://aur.neuclix.com/refer.html"
+    },
+    {
+      "type": "embed",
+      "url": "https://drive.google.com/file/d/14DejQMUVsHBW6ZxvnnfjtT_eSj8IdIAy/view",
+      "embed": "https://drive.google.com/file/d/14DejQMUVsHBW6ZxvnnfjtT_eSj8IdIAy/preview",
+      "title": "Video: AUR Referral Briefing (7:06)",
+      "description": "A fun \"mission briefing\" take on the program: your tools, the rules, and how rewards are paid.",
+      "caption": "Want to earn referral rewards by introducing businesses to a free utility bill review? Here's the full briefing on American Utility Review's referral program. Sign up: https://aur.neuclix.com/refer.html"
+    }
+  ],
   "posts": []
 }
