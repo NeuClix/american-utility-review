@@ -614,3 +614,7 @@ a:hover { color: var(--navy); }
 .file-list .is-error .file-list__state { color: var(--red); white-space: normal; text-align: right; }
 .up-loa { display: block; text-align: center; margin-top: 8px; }
 #up-msg { margin-top: 14px; }
+.install-panel { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; border-left: 4px solid var(--red); }
+.install-panel[hidden] { display: none; }
+.install-panel .fine-print { margin: 0; }
+.install-panel button { border: 0; font: inherit; font-weight: 700; cursor: pointer; }

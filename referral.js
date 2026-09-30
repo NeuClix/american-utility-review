@@ -119,6 +119,7 @@
     });
     $('ref-empty').hidden = d.referrals.length > 0;
 
+    setupInstall();
     setupSharing(d.link);
     setupQr(d.link, d.code);
     setupTemplates(d.link);
@@ -140,6 +141,32 @@
     t.select();
     document.execCommand('copy');
     t.remove();
+  }
+
+  // "Get the app": Android/desktop Chrome and Edge offer an install prompt; iPhone needs Share → Add to Home Screen
+  var installEvent = null;
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault();
+    installEvent = e;
+    if (!$('dash-body').hidden) setupInstall();
+  });
+  function setupInstall() {
+    var standalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+    var panel = $('install-panel');
+    if (standalone) { panel.hidden = true; return; }
+    var ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
+    if (installEvent) {
+      panel.hidden = false;
+      $('install-btn').hidden = false;
+      $('install-btn').onclick = function () {
+        installEvent.prompt();
+        installEvent.userChoice.then(function () { panel.hidden = true; installEvent = null; });
+      };
+    } else if (ios) {
+      panel.hidden = false;
+      $('install-btn').hidden = true;
+      $('install-text').innerHTML = 'On iPhone: tap the <strong>Share</strong> button in Safari, then <strong>Add to Home Screen</strong>.';
+    }
   }
 
   function setupSharing(link) {

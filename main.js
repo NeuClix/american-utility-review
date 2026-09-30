@@ -95,3 +95,10 @@ if (contactForm) contactForm.addEventListener('submit', function (e) {
       alert('Sorry, your request could not be sent. Please try again.' + (err && err.message ? '\n\n' + err.message : ''));
     });
 });
+
+// Installable app (PWA): register the service worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js').catch(function () {});
+  });
+}

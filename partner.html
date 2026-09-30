@@ -9,6 +9,11 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0a2240">
+<meta name="apple-mobile-web-app-title" content="AUR">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
@@ -39,6 +44,7 @@
       <div class="eyebrow">Referral dashboard</div>
       <h1 class="h2">We couldn&rsquo;t open this dashboard</h1>
       <p class="lede" id="dash-error-text"></p>
+      <p class="fine-print">New to the program? <a href="/refer.html">Sign up to get your referral link</a>.</p>
       <form class="card-form resend-form" id="resend-form">
         <label><span>Your email</span><input name="email" type="email" required autocomplete="email"></label>
         <button type="submit" class="btn btn--primary">Email me my dashboard link</button>
@@ -79,6 +85,14 @@
           <button type="button" class="btn btn--outline-dark" id="qr-download">Download QR code</button>
           <p class="fine-print">Print it on business cards, flyers or a counter sign.</p>
         </div>
+      </div>
+
+      <div class="panel install-panel" id="install-panel" hidden>
+        <div>
+          <h2 class="panel__title">Get the app</h2>
+          <p class="fine-print" id="install-text">Add your dashboard to your home screen so your link is always one tap away.</p>
+        </div>
+        <button type="button" class="btn btn--primary" id="install-btn">Install app</button>
       </div>
 
       <div class="panel">
