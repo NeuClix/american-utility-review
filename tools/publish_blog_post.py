@@ -30,6 +30,19 @@ CTA = """
 </aside>
 """
 
+CTA_PARTNERS = """
+<aside class="blog-cta">
+  <h2>Get your referral link</h2>
+  <p>Signing up is free and takes about a minute. You&rsquo;ll get your own link, QR code, flyer and ready-made messages right away.</p>
+  <a href="/refer.html#join" class="btn btn--primary">Become a referral partner</a>
+</aside>
+"""
+
+NOTE_PARTNERS = """
+<p class="fine-print blog-note">Rewards are paid only when a referral becomes an AUR client and AUR has received the client&rsquo;s payment. Earnings aren&rsquo;t guaranteed and depend on your referrals.
+See the <a href="/referral-terms.html">program terms</a>. Public employees and officials can&rsquo;t earn rewards.</p>
+"""
+
 NOTE = """
 <p class="fine-print blog-note">Dollar amounts mentioned are individual examples, not typical results. Results vary; every situation is different.
 If someone shared this page with you, they may be an AUR referral partner who may earn a referral fee from AUR, never from you.</p>
@@ -43,6 +56,9 @@ def main():
     ap.add_argument("--title")
     ap.add_argument("--description", default="")
     ap.add_argument("--kit-title", help="title shown on partner dashboards")
+    ap.add_argument("--audience", choices=["business", "partners"], default="business",
+                    help="business: request-a-review button, added to partner dashboards; "
+                         "partners: become-a-partner button, not added to dashboards")
     args = ap.parse_args()
 
     slug = re.sub(r"[^a-z0-9-]", "", args.slug.lower())
@@ -74,13 +90,17 @@ def main():
         f'<meta property="og:image" content="{SITE}/icon-512.png">\n'
         f'<meta name="twitter:card" content="summary">'), head)
 
+    cta, note = (CTA_PARTNERS, NOTE_PARTNERS) if args.audience == "partners" else (CTA, NOTE)
     page = (f'{head}<main>\n<article class="section">\n  <div class="wrap measure prose">\n'
             f'    <div class="eyebrow">American Utility Review</div>\n    <h1 class="h2">{t}</h1>\n'
-            f'{body}\n{CTA}{NOTE}  </div>\n</article>\n</main>{foot}')
+            f'{body}\n{cta}{note}  </div>\n</article>\n</main>{foot}')
     out = ROOT / "blog" / f"{slug}.html"
     out.parent.mkdir(exist_ok=True)
     out.write_text(page, encoding="utf-8")
 
+    if args.audience == "partners":
+        print(f"Wrote {out.relative_to(ROOT)}")
+        return
     kit_path = ROOT / "partner-kit" / "kit.json"
     kit = json.loads(kit_path.read_text())
     items = [i for i in kit.get("items", []) if i.get("url") != f"/blog/{slug}.html"]
