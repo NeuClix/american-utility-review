@@ -2,7 +2,7 @@
 // REFERRAL_API: the Google Apps Script web app URL (ends in /exec). Leave empty to turn the program off;
 // the contact form then keeps sending through Web3Forms only.
 window.AUR_REFERRAL = {
-  API: '',
+  API: 'https://script.google.com/macros/s/AKfycbxAq-Girm47qoD-Obsm3PrdGILpM1Lp7LfhLBV7Vzguh_ykj5x2-nxOykELWJLQgpKM/exec',
   // How long a referral link is remembered on a visitor's device, in days
   COOKIE_DAYS: 90
 };
