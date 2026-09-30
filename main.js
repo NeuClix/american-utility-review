@@ -14,17 +14,16 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     body: new FormData(form)
   })
     .then(function (res) {
-      if (!res.ok) throw new Error('Request failed');
-      return res.json();
+      return res.json().catch(function () { return {}; });
     })
     .then(function (data) {
-      if (String(data.success) !== 'true') throw new Error(data.message || 'Request failed');
+      if (String(data.success) !== 'true') throw new Error(data.message || '');
       form.reset();
       button.textContent = 'Thank you. We will be in touch.';
     })
-    .catch(function () {
+    .catch(function (err) {
       button.disabled = false;
       button.textContent = label;
-      alert('Sorry, your request could not be sent. Please try again.');
+      alert('Sorry, your request could not be sent. Please try again.' + (err && err.message ? '\n\n' + err.message : ''));
     });
 });
