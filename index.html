@@ -209,10 +209,11 @@
       <h2>Find out if you are owed a refund</h2>
       <p class="lede">Send us your recent utility bills. We will review them and tell you what we find.</p>
     </div>
-    <form class="contact-form" id="contact-form" action="https://formsubmit.co/steve@neuclix.com" method="POST">
-      <input type="hidden" name="_subject" value="New bill review request - American Utility Review">
-      <input type="hidden" name="_template" value="table">
-      <input type="text" name="_honey" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="c7087f01-704a-4610-b076-ad5c85067f54">
+      <input type="hidden" name="subject" value="New bill review request - American Utility Review">
+      <input type="hidden" name="from_name" value="American Utility Review website">
+      <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
       <label class="visually-hidden" for="cf-name">Name</label>
       <input id="cf-name" name="name" placeholder="Name" autocomplete="name" required>
       <label class="visually-hidden" for="cf-org">Organization</label>

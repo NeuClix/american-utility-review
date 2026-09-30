@@ -1,5 +1,5 @@
-// Submissions are emailed to the form's action address via FormSubmit (formsubmit.co).
-// Without JavaScript the form still posts normally to the same address.
+// Submissions are emailed to the address tied to the form's Web3Forms access key.
+// Without JavaScript the form still posts normally to the same endpoint.
 document.getElementById('contact-form').addEventListener('submit', function (e) {
   e.preventDefault();
   var form = this;
@@ -8,7 +8,7 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
   button.disabled = true;
   button.textContent = 'Sending…';
 
-  fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+  fetch(form.action, {
     method: 'POST',
     headers: { Accept: 'application/json' },
     body: new FormData(form)
@@ -17,7 +17,7 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
       return res.json().catch(function () { return {}; });
     })
     .then(function (data) {
-      if (String(data.success) !== 'true') throw new Error(data.message || '');
+      if (data.success !== true) throw new Error(data.message || '');
       form.reset();
       button.textContent = 'Thank you. We will be in touch.';
     })
