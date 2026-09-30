@@ -18,17 +18,22 @@
   });
 })();
 
-// Submissions are emailed to the address tied to the form's Web3Forms access key.
-// Without JavaScript the form still posts normally to the same endpoint.
-document.getElementById('contact-form').addEventListener('submit', function (e) {
-  e.preventDefault();
-  var form = this;
-  var button = form.querySelector('button');
-  var label = button.textContent;
-  button.disabled = true;
-  button.textContent = 'Sending…';
+// Referral links: remember ?ref=CODE on this device and count the click.
+(function () {
+  var code = (new URLSearchParams(location.search).get('ref') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 12);
+  if (!code) return;
+  AUR_REF.save(code);
+  if (AUR_REF.enabled) {
+    AUR_REF.post({ action: 'click', ref: code, page: location.pathname, referrer: document.referrer }).catch(function () {});
+  }
+  // Tidy the address bar so the code isn't re-shared by accident
+  history.replaceState(null, '', location.pathname + location.hash);
+})();
 
-  fetch(form.action, {
+// Contact form: goes to the Google Sheet (with any referral code) when the referral program is on,
+// falling back to Web3Forms email if the Sheet can't be reached. Without JavaScript it posts to Web3Forms.
+function sendToWeb3Forms(form) {
+  return fetch(form.action, {
     method: 'POST',
     headers: { Accept: 'application/json' },
     body: new FormData(form)
@@ -38,6 +43,37 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     })
     .then(function (data) {
       if (data.success !== true) throw new Error(data.message || '');
+    });
+}
+
+function sendToSheet(form) {
+  return AUR_REF.post({
+    action: 'lead',
+    name: form.elements.name.value,
+    organization: form.elements.organization.value,
+    contact: form.elements.contact.value,
+    ref: AUR_REF.load(),
+    website: form.elements.botcheck.checked ? 'bot' : ''
+  }).then(function (data) {
+    if (!data.ok) throw new Error(data.error || '');
+  });
+}
+
+var contactForm = document.getElementById('contact-form');
+if (contactForm) contactForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  var form = this;
+  var button = form.querySelector('button');
+  var label = button.textContent;
+  button.disabled = true;
+  button.textContent = 'Sending…';
+
+  var send = AUR_REF.enabled
+    ? sendToSheet(form).catch(function () { return sendToWeb3Forms(form); })
+    : sendToWeb3Forms(form);
+
+  send
+    .then(function () {
       form.reset();
       button.textContent = 'Thank you. We will be in touch.';
     })

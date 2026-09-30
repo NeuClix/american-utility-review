@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your referral dashboard | American Utility Review</title>
+<meta name="description" content="Your American Utility Review referral dashboard.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a href="/" aria-label="American Utility Review home"><img class="site-header__logo" src="logo.png" alt="American Utility Review" width="197" height="48"></a>
+  <div class="header-actions">
+    <a href="/#contact" class="btn btn--primary header-cta"><span class="header-cta__long">Request a free bill review</span><span class="header-cta__short">Free bill review</span></a>
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><span class="nav-toggle__bars"></span></button>
+  </div>
+  <nav class="site-nav" id="site-nav" aria-label="Main">
+    <a href="/#services">Services</a>
+    <a href="/#process">Process</a>
+    <a href="/#savings">Results</a>
+    <a href="/refer.html">Refer &amp; earn</a>
+    <a href="/#contact" class="btn btn--primary nav-cta">Request a free bill review</a>
+  </nav>
+</header>
+
+<main>
+<section class="section section--tint dash" id="dash">
+  <div class="wrap">
+    <div class="dash-loading" id="dash-loading">Loading your dashboard&hellip;</div>
+
+    <div id="dash-error" hidden>
+      <div class="eyebrow">Referral dashboard</div>
+      <h1 class="h2">We couldn&rsquo;t open this dashboard</h1>
+      <p class="lede" id="dash-error-text"></p>
+      <form class="card-form resend-form" id="resend-form">
+        <label><span>Your email</span><input name="email" type="email" required autocomplete="email"></label>
+        <button type="submit" class="btn btn--primary">Email me my dashboard link</button>
+        <p class="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <div id="dash-body" hidden>
+      <div class="eyebrow">Referral dashboard</div>
+      <h1 class="h2">Welcome, <span id="d-name"></span></h1>
+      <p class="lede">Earn <strong class="js-reward">a referral reward</strong>. Rewards are released after your referral&rsquo;s payment to AUR is received.</p>
+
+      <div class="stat-row">
+        <div class="stat"><span class="stat__num" id="s-clicks">0</span><span class="stat__label">Link visits</span></div>
+        <div class="stat"><span class="stat__num" id="s-referrals">0</span><span class="stat__label">Referrals</span></div>
+        <div class="stat"><span class="stat__num" id="s-converted">0</span><span class="stat__label">Became clients</span></div>
+        <div class="stat"><span class="stat__num" id="s-earned">$0</span><span class="stat__label">Earned (<span id="s-paid">$0</span> paid)</span></div>
+      </div>
+
+      <div class="dash-grid">
+        <div class="panel">
+          <h2 class="panel__title">Your link</h2>
+          <div class="link-box"><input id="d-link" readonly aria-label="Your referral link"><button type="button" class="btn btn--primary" id="copy-link">Copy</button></div>
+          <p class="fine-print">Your code: <strong id="d-code"></strong>. Anyone who requests a review within 90 days of opening your link is credited to you.</p>
+          <div class="share-row" id="share-row">
+            <button type="button" class="share-btn" id="share-native" hidden>Share&hellip;</button>
+            <a class="share-btn" id="share-email" target="_blank" rel="noopener">Email</a>
+            <a class="share-btn" id="share-sms">Text</a>
+            <a class="share-btn" id="share-linkedin" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="share-btn" id="share-facebook" target="_blank" rel="noopener">Facebook</a>
+            <a class="share-btn" id="share-x" target="_blank" rel="noopener">X</a>
+            <a class="share-btn" id="share-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+        <div class="panel qr-panel">
+          <h2 class="panel__title">QR code</h2>
+          <div id="qr" class="qr"></div>
+          <button type="button" class="btn btn--outline-dark" id="qr-download">Download QR code</button>
+          <p class="fine-print">Print it on business cards, flyers or a counter sign.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2 class="panel__title">Ready-made messages</h2>
+        <p class="fine-print">Copy, personalize and send. Each one includes the required note that you may earn a referral fee.</p>
+        <div class="templates" id="templates"></div>
+      </div>
+
+      <div class="panel">
+        <h2 class="panel__title">Tips that work</h2>
+        <ul class="tips">
+          <li><strong>Think about who pays big utility bills:</strong> restaurant owners, plant managers, farm and ranch operators, hotel managers, church administrators and office building owners.</li>
+          <li><strong>Make it personal.</strong> A direct text or email to someone you know beats a public post.</li>
+          <li><strong>Lead with &ldquo;free&rdquo; and &ldquo;no upfront cost.&rdquo;</strong> The review costs them nothing to find out.</li>
+          <li><strong>Accountants and bookkeepers</strong> see their clients&rsquo; utility bills every month and make great partners.</li>
+          <li><strong>Always say you may earn a referral fee.</strong> It&rsquo;s required, and people trust you more for it.</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2 class="panel__title">Your referrals</h2>
+        <div class="table-wrap">
+          <table class="ref-table">
+            <thead><tr><th>Date</th><th>Organization</th><th>Status</th><th>Reward</th></tr></thead>
+            <tbody id="ref-rows"></tbody>
+          </table>
+        </div>
+        <p class="fine-print" id="ref-empty">No referrals yet. Share your link to get started.</p>
+        <p class="fine-print">Statuses: <strong>New</strong> (received) &rarr; <strong>Qualified</strong> (being reviewed) &rarr; <strong>Converted</strong> (became a client) &rarr; <strong>Paid</strong> (your reward was sent).</p>
+      </div>
+
+      <p class="fine-print">Keep this page&rsquo;s address private; anyone with it can see your dashboard. Questions? Email <a href="mailto:steve@neuclix.com">steve@neuclix.com</a>.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer"><span>&copy; American Utility Review</span><span><a href="/referral-terms.html">Referral program terms</a></span></footer>
+<script src="referral-config.js"></script>
+<script src="main.js"></script>
+<script src="qrcode.min.js"></script>
+<script src="referral.js"></script>
+</body>
+</html>

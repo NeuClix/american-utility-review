@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Refer & Earn | American Utility Review</title>
+<meta name="description" content="Share your personal link to American Utility Review&rsquo;s free utility bill review and earn a reward when your referral becomes a client.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a href="/" aria-label="American Utility Review home"><img class="site-header__logo" src="logo.png" alt="American Utility Review" width="197" height="48"></a>
+  <div class="header-actions">
+    <a href="/#contact" class="btn btn--primary header-cta"><span class="header-cta__long">Request a free bill review</span><span class="header-cta__short">Free bill review</span></a>
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><span class="nav-toggle__bars"></span></button>
+  </div>
+  <nav class="site-nav" id="site-nav" aria-label="Main">
+    <a href="/#services">Services</a>
+    <a href="/#process">Process</a>
+    <a href="/#savings">Results</a>
+    <a href="/refer.html">Refer &amp; earn</a>
+    <a href="/#contact" class="btn btn--primary nav-cta">Request a free bill review</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero section--dark page-hero">
+  <div class="wrap hero__grid">
+    <div>
+      <div class="hero__kicker">Referral partner program</div>
+      <h1>Know a business that pays utility bills? Share your link and earn.</h1>
+      <p class="hero__lede">Every organization with electric, gas or water bills could be overpaying. Introduce them to a free bill review. When your referral becomes a client, you earn <strong class="js-reward">a referral reward</strong>.</p>
+      <div class="hero__actions">
+        <a href="#join" class="btn btn--primary">Get my referral link</a>
+        <a href="#how" class="btn btn--outline">How it works</a>
+      </div>
+    </div>
+    <div class="finds">
+      <div class="finds__title">Who to share with</div>
+      <ol>
+        <li>Business owners and managers</li>
+        <li>Restaurants, hotels and churches</li>
+        <li>Manufacturers, farms and oil &amp; gas</li>
+        <li>Accountants and consultants with clients</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="section section--tint">
+  <div class="wrap">
+    <div class="eyebrow">How it works</div>
+    <h2 class="h2">Four steps from link to reward</h2>
+    <ol class="steps">
+      <li><h3>Sign up</h3><p>It takes a minute. We email you a private dashboard with your personal link.</p></li>
+      <li><h3>Share</h3><p>Send your link by text, email or social. Your dashboard has ready-made messages and a QR code.</p></li>
+      <li><h3>We review their bills</h3><p>Anyone who requests a review through your link is credited to you for 90 days.</p></li>
+      <li><h3>Get paid</h3><p>When your referral becomes a client and pays AUR, your reward is released. Track every step on your dashboard.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="join" class="section">
+  <div class="wrap contact">
+    <div>
+      <div class="eyebrow">Join the program</div>
+      <h2 class="h2">Get your referral link</h2>
+      <p class="lede">Free to join, and open to anyone. Already signed up? Enter the same email and we&rsquo;ll resend your dashboard link.</p>
+      <p class="fine-print">Employees of schools, cities, counties, hospitals and other public entities can&rsquo;t receive rewards. You can still <a href="/#contact">request a free review</a> for your organization.</p>
+    </div>
+    <form class="card-form" id="signup-form" novalidate>
+      <label><span>Full name</span><input name="name" autocomplete="name" required maxlength="100"></label>
+      <label><span>Email</span><input name="email" type="email" autocomplete="email" required maxlength="200"></label>
+      <label><span>Phone <span class="optional">(optional)</span></span><input name="phone" type="tel" autocomplete="tel" maxlength="50"></label>
+      <label><span>Company <span class="optional">(optional)</span></span><input name="organization" autocomplete="organization" maxlength="150"></label>
+      <input type="text" name="website" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="check"><input type="checkbox" name="public_employee"><span>I work for a school, city, county, state agency, public hospital or other public entity</span></label>
+      <label class="check"><input type="checkbox" name="agree" required><span>I agree to the <a href="/referral-terms.html" target="_blank">referral program terms</a>, including telling people I may earn a referral fee</span></label>
+      <button type="submit" class="btn btn--primary">Get my link</button>
+      <p class="form-msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer"><span>&copy; American Utility Review</span><span><a href="/referral-terms.html">Referral program terms</a></span></footer>
+<script src="referral-config.js"></script>
+<script src="main.js"></script>
+<script src="referral.js"></script>
+</body>
+</html>
