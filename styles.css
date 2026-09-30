@@ -357,7 +357,62 @@ a:hover { color: var(--navy); }
   flex-wrap: wrap;
 }
 
+/* Mobile menu toggle (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  cursor: pointer;
+  color: var(--navy);
+}
+.nav-toggle__bars,
+.nav-toggle__bars::before,
+.nav-toggle__bars::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  margin: 0 auto;
+  position: relative;
+  transition: transform .2s, background-color .2s;
+}
+.nav-toggle__bars::before,
+.nav-toggle__bars::after { content: ''; position: absolute; left: 0; }
+.nav-toggle__bars::before { top: -6px; }
+.nav-toggle__bars::after { top: 6px; }
+.nav-open .nav-toggle__bars { background: transparent; }
+.nav-open .nav-toggle__bars::before { transform: translateY(6px) rotate(45deg); }
+.nav-open .nav-toggle__bars::after { transform: translateY(-6px) rotate(-45deg); }
+
 /* Responsive */
+@media (max-width: 900px) {
+  html { scroll-padding-top: 80px; }
+  .site-header { flex-wrap: nowrap; padding-top: 8px; padding-bottom: 8px; }
+  .site-header__logo { height: 52px; }
+  .nav-toggle { display: block; flex: none; }
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 12px 24px rgba(10, 34, 64, .12);
+    padding: 8px var(--gutter) 20px;
+    font-size: 17px;
+  }
+  .nav-open .site-nav { display: flex; }
+  .site-nav a { padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .site-nav .btn--primary { margin-top: 16px; text-align: center; border-bottom: 0; padding: 14px 22px; }
+}
 @media (max-width: 960px) {
   :root { --gutter: 32px; }
   .hero__grid, .industries, .contact { grid-template-columns: minmax(0, 1fr); gap: 48px; }
@@ -365,10 +420,8 @@ a:hover { color: var(--navy); }
 }
 @media (max-width: 640px) {
   :root { --gutter: 16px; }
-  html { scroll-padding-top: 16px; }
-  .site-header { position: static; }
-  .site-header__logo { height: 52px; }
-  .site-nav { gap: 16px 20px; }
+  html { scroll-padding-top: 72px; }
+  .site-header__logo { height: 44px; }
   .section, .hero { padding-top: 64px; padding-bottom: 64px; }
   .hero h1 { font-size: 38px; }
   .hero__lede { font-size: 18px; }
