@@ -19,7 +19,7 @@
  * and asks for Drive permission), then Deploy → Manage deployments → Edit → New version.
  */
 
-var SITE_URL = 'https://aur.neuclix.com';
+var SITE_URL = 'https://www.americanutilityreview.com';
 var STATUSES = ['New', 'Qualified', 'Converted', 'Paid', 'Not a fit'];
 
 var SHEETS = {

@@ -16,16 +16,16 @@ Everything you make shows up on every partner's dashboard, already connected to 
 1. **Make it in NotebookLM** with the prompts below.
 2. **Review it** against the checklist in section 7.
 3. **Put the finished files in Google Drive › AUR Partner Campaign**, or paste the text into a chat with Claude.
-4. **It's published to the website** (aur.neuclix.com) and appears on every partner's dashboard:
+4. **It's published to the website** (americanutilityreview.com) and appears on every partner's dashboard:
 
     - **Video and images** go in the **Marketing kit** with **Download** and **Copy caption** buttons. The caption already contains the partner's personal link.
-    - **The blog post** becomes a page on aur.neuclix.com. Each partner gets a **Copy my link** button with their code attached, so anyone who reads the article and then requests a review is credited to them.
+    - **The blog post** becomes a page on americanutilityreview.com. Each partner gets a **Copy my link** button with their code attached, so anyone who reads the article and then requests a review is credited to them.
     - **Social and LinkedIn posts** go in **Share-ready posts**, filled in with the partner's link. Partners copy, paste and attach the video or image.
 
 5. Partners keep their **personal flyer, QR code and share buttons**. The new pieces point back to the same tracking link.
 
 ### Why the link isn't in the video or images
-A video or image is the same file for every partner, so it can't carry one partner's link. It ends with "aur.neuclix.com". The partner's personal link goes in the **caption** or post text, and the dashboard fills that in for each partner automatically.
+A video or image is the same file for every partner, so it can't carry one partner's link. It ends with "americanutilityreview.com". The partner's personal link goes in the **caption** or post text, and the dashboard fills that in for each partner automatically.
 
 ---
 
@@ -55,7 +55,7 @@ For each prompt, you can select only guide 5 and the Client Guide as sources. Th
 > Say AUR has reviewed utility bills since 1986, is independent, and has no upfront cost: AUR is paid a share of refunds and savings only after the client receives them.
 > Show how easy it is: request in under a minute, upload a recent month of bills, sign one authorization, and nothing changes without the client's approval.
 > You may use one result as an example, exactly as "For example, AUR found a $100,000 refund for a health club due to a demand reading error," followed by "Results vary; every situation is different."
-> End with: "Request your free bill review at aur.neuclix.com."
+> End with: "Request your free bill review at americanutilityreview.com."
 > Rules: use only facts from the sources; never promise or guarantee savings or refunds; don't say most businesses are overcharged or quote any error-rate statistic; don't name any clients; don't say AUR is licensed, endorsed or government-approved.
 
 **After it's made:** download the video (⋮ › Download). NotebookLM videos are landscape. For Instagram Reels or TikTok, a vertical version can be made from it later.
@@ -80,11 +80,11 @@ For each prompt, you can select only guide 5 and the Client Guide as sources. Th
 > (4) "What a review looks like": request, upload a recent month of bills, sign one authorization, auditors review, findings shared, nothing changes without your approval;
 > (5) "What it costs": nothing upfront; AUR is paid a share of refunds and savings only after the client receives them;
 > (6) two or three example results, each introduced as an example and followed by "Results vary; every situation is different";
-> (7) a closing call to action: "Request your free bill review at aur.neuclix.com."
+> (7) a closing call to action: "Request your free bill review at americanutilityreview.com."
 > Use plain, confident language and short paragraphs with subheadings. Format in Markdown.
 > Rules: use only facts from the sources; never promise or guarantee savings or refunds; no error-rate statistics; don't name clients; cite ENERGY STAR if you use its sector figures.
 
-**After it's made:** copy the whole report text and send it to Claude, or save it to the Drive folder. It gets published at aur.neuclix.com/blog/… with a request button, and added to partner dashboards.
+**After it's made:** copy the whole report text and send it to Claude, or save it to the Drive folder. It gets published at americanutilityreview.com/blog/… with a request button, and added to partner dashboards.
 
 ---
 
@@ -124,7 +124,7 @@ For each prompt, you can select only guide 5 and the Client Guide as sources. Th
 ### Optional: images to go with the posts
 Studio › **Infographic** › Customize, orientation **Square** (for Instagram and LinkedIn) or **Portrait**, with this prompt:
 
-> "Anatomy of a commercial utility bill: where errors hide." Show rate schedule, demand charge, meter multiplier, riders, taxes and fees, and sewer charges, each with a one-line explanation. Footer: "Request your free bill review at aur.neuclix.com." No savings promises, no statistics, no client names.
+> "Anatomy of a commercial utility bill: where errors hide." Show rate schedule, demand charge, meter multiplier, riders, taxes and fees, and sewer charges, each with a one-line explanation. Footer: "Request your free bill review at americanutilityreview.com." No savings promises, no statistics, no client names.
 
 ---
 
@@ -138,7 +138,7 @@ Studio › **Infographic** › Customize, orientation **Square** (for Instagram 
 - ☐ "Free" is accurate: free to request a review, no upfront cost, AUR paid a share of refunds and savings received.
 - ☐ Every post ends with the referral-fee disclosure.
 - ☐ Posts use `{link}` where the link goes (the dashboard swaps in each partner's link).
-- ☐ Video and images end with aur.neuclix.com.
+- ☐ Video and images end with americanutilityreview.com.
 - ☐ Facts and pronunciations in the video are right (NotebookLM hosts sometimes improvise; regenerate if they do).
 
 ---
@@ -150,7 +150,7 @@ Put the finished pieces in **Google Drive › AUR Partner Campaign**, or paste t
 | Piece | What to send | Where it shows up |
 |---|---|---|
 | Video | The downloaded .mp4 | Marketing kit, with caption |
-| Blog post | The report text | aur.neuclix.com/blog/…, plus a "Copy my link" item in the Marketing kit |
+| Blog post | The report text | americanutilityreview.com/blog/…, plus a "Copy my link" item in the Marketing kit |
 | Social posts | The labeled post text | Share-ready posts |
 | LinkedIn posts and article | The labeled post text | Share-ready posts |
 | Infographic | The downloaded image | Marketing kit, with caption |

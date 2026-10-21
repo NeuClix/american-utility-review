@@ -33,7 +33,7 @@ RULES = (
     "electric, gas and water/sewer bills for billing errors, overcharges and better rates, and help recover refunds. "
     "Only use facts from the sources. Do not promise or guarantee savings or refunds, do not invent statistics or "
     "percentages, and do not name specific clients. The call to action is to request a free bill review at "
-    "aur.neuclix.com."
+    "americanutilityreview.com."
 )
 
 # What to generate: (key, kit entry, generator)

@@ -12,7 +12,7 @@ Everything needed to publish the two referral program videos on YouTube and prom
 - **Captions:** The_AUR_Referral_Program.en.srt and AUR_Referral_Briefing.en.srt
 - **Thumbnails:** thumbnail-referral-program.png and thumbnail-referral-briefing.png (1280×720)
 
-**Blog post:** aur.neuclix.com/blog/earn-referral-rewards.html
+**Blog post:** americanutilityreview.com/blog/earn-referral-rewards.html
 
 **Rule for all copy:** never state or promise an amount partners will earn. Say "earn a referral reward", and point to the program terms.
 
@@ -26,10 +26,10 @@ Everything needed to publish the two referral program videos on YouTube and prom
 
 > American Utility Review has been auditing commercial electric, natural gas and water/sewer bills since 1986. Our independent auditors find billing errors and overcharges and help businesses and organizations recover refunds, with no upfront cost.
 >
-> Request a free bill review: https://aur.neuclix.com
-> Become a referral partner: https://aur.neuclix.com/refer.html
+> Request a free bill review: https://www.americanutilityreview.com
+> Become a referral partner: https://www.americanutilityreview.com/refer.html
 
-4. **Links** (Customization › Basic info): "Request a free bill review" → https://aur.neuclix.com and "Referral program" → https://aur.neuclix.com/refer.html
+4. **Links** (Customization › Basic info): "Request a free bill review" → https://www.americanutilityreview.com and "Referral program" → https://www.americanutilityreview.com/refer.html
 5. **Profile picture:** icon-512.png (the AUR "A" mark). **Banner:** 2560×1440, with the important content in the middle 1546×423.
 6. **Verify the channel** at youtube.com/verify (phone number). It unlocks custom thumbnails and videos over 15 minutes.
 
@@ -48,7 +48,7 @@ Alternatives:
 ### Description (paste as-is)
 
 ```
-Know a business that pays big utility bills? Introduce them to a free utility bill review from American Utility Review and earn a referral reward when they become a client. Sign up free: https://aur.neuclix.com/refer.html
+Know a business that pays big utility bills? Introduce them to a free utility bill review from American Utility Review and earn a referral reward when they become a client. Sign up free: https://www.americanutilityreview.com/refer.html
 
 In this video:
 • Why businesses say yes: independent utility bill auditing since 1986, with no upfront cost
@@ -70,10 +70,10 @@ Chapters
 5:41 Top tips for referral success
 6:20 Who do you know?
 
-🔗 Become a referral partner: https://aur.neuclix.com/refer.html
-🔗 How the program works: https://aur.neuclix.com/blog/earn-referral-rewards.html
-🔗 Request a free bill review for your own organization: https://aur.neuclix.com
-📄 Program terms: https://aur.neuclix.com/referral-terms.html
+🔗 Become a referral partner: https://www.americanutilityreview.com/refer.html
+🔗 How the program works: https://www.americanutilityreview.com/blog/earn-referral-rewards.html
+🔗 Request a free bill review for your own organization: https://www.americanutilityreview.com
+📄 Program terms: https://www.americanutilityreview.com/referral-terms.html
 
 About American Utility Review
 Independent commercial utility auditors since 1986. We review electric, natural gas and water/sewer bills for billing errors, overcharges and better rates, and help recover refunds. No upfront cost: AUR is paid a share of refunds and savings only after the client receives them.
@@ -110,7 +110,7 @@ referral program, utility bill audit, utility bill review, commercial utility au
 
 ### End screen (last 20 seconds, starting 6:22)
 - **Video element:** "Best for viewer" or the Briefing video
-- **Link element** (needs a verified channel in the YouTube Partner Program; otherwise skip) → aur.neuclix.com/refer.html
+- **Link element** (needs a verified channel in the YouTube Partner Program; otherwise skip) → americanutilityreview.com/refer.html
 - **Subscribe** button
 
 ### Cards
@@ -119,7 +119,7 @@ referral program, utility bill audit, utility bill review, commercial utility au
 ### Pinned comment
 
 ```
-👉 Get your referral link (free, about 1 minute): https://aur.neuclix.com/refer.html
+👉 Get your referral link (free, about 1 minute): https://www.americanutilityreview.com/refer.html
 Questions about the program? Ask below and we'll answer.
 ```
 
@@ -138,7 +138,7 @@ Alternatives:
 ### Description
 
 ```
-Your mission, should you choose to accept it: help businesses find out whether they're overpaying on utility bills, and earn a referral reward for making the introduction. Sign up free: https://aur.neuclix.com/refer.html
+Your mission, should you choose to accept it: help businesses find out whether they're overpaying on utility bills, and earn a referral reward for making the introduction. Sign up free: https://www.americanutilityreview.com/refer.html
 
 This "mission briefing" walks through American Utility Review's referral program: the tools in your partner dashboard, the rules of engagement, how you get credit, and how rewards are paid.
 
@@ -155,10 +155,10 @@ Chapters
 6:24 Backed by AUR since 1986
 6:46 Briefing complete
 
-🔗 Become a referral partner: https://aur.neuclix.com/refer.html
-🔗 How the program works: https://aur.neuclix.com/blog/earn-referral-rewards.html
-🔗 Request a free bill review: https://aur.neuclix.com
-📄 Program terms: https://aur.neuclix.com/referral-terms.html
+🔗 Become a referral partner: https://www.americanutilityreview.com/refer.html
+🔗 How the program works: https://www.americanutilityreview.com/blog/earn-referral-rewards.html
+🔗 Request a free bill review: https://www.americanutilityreview.com
+📄 Program terms: https://www.americanutilityreview.com/referral-terms.html
 
 About American Utility Review
 Independent commercial utility auditors since 1986, reviewing electric, natural gas and water/sewer bills for billing errors and overcharges. No upfront cost: AUR is paid a share of refunds and savings only after the client receives them.
@@ -187,7 +187,7 @@ Same as video 1, except:
 ### Pinned comment
 
 ```
-🎯 Mission starts here: https://aur.neuclix.com/refer.html
+🎯 Mission starts here: https://www.americanutilityreview.com/refer.html
 Free to join, about 60 seconds. Drop your questions below.
 ```
 
@@ -195,7 +195,7 @@ Free to join, about 60 seconds. Drop your questions below.
 
 ## 4. YouTube Shorts (vertical clips)
 
-Cut these in Descript or YouTube's "Create › Edit into a Short" (crop to 9:16, keep captions on). Each one ends with the on-screen text **"Link in description"** and the description **"Become a referral partner: aur.neuclix.com/refer.html"**.
+Cut these in Descript or YouTube's "Create › Edit into a Short" (crop to 9:16, keep captions on). Each one ends with the on-screen text **"Link in description"** and the description **"Become a referral partner: americanutilityreview.com/refer.html"**.
 
 | # | Video | Clip | Length | Short title |
 |---|---|---|---|---|
@@ -213,7 +213,7 @@ Post 2–3 a week. Add each Short to the "AUR Referral Program" playlist, and li
 
 ## 5. Blog post
 
-**Live at:** https://aur.neuclix.com/blog/earn-referral-rewards.html
+**Live at:** https://www.americanutilityreview.com/blog/earn-referral-rewards.html
 
 - **Title:** How to Earn Referral Rewards by Sharing a Free Utility Bill Review
 - **Meta description:** "Introduce businesses to a free utility bill review from American Utility Review and earn a referral reward when they become a client. Here's how the program works."
@@ -241,7 +241,7 @@ If you know business owners, plant managers, hotel operators, farmers or account
 → You get your own referral link, QR code, flyer and a dashboard to track every referral
 → You earn a referral reward when your referral becomes a client
 
-Signing up takes about a minute: https://aur.neuclix.com/refer.html
+Signing up takes about a minute: https://www.americanutilityreview.com/refer.html
 
 Earnings aren't guaranteed; see the program terms. Clubs and nonprofits welcome.
 
@@ -258,7 +258,7 @@ Commercial utility bills are complicated: rate schedules, demand charges, meter 
 American Utility Review's independent auditors do, with no upfront cost to your client. And through our referral program, you can earn a referral reward when a client you introduce becomes an AUR client.
 
 How it works (6-minute video): [YouTube link]
-Join: https://aur.neuclix.com/refer.html
+Join: https://www.americanutilityreview.com/refer.html
 
 #Accounting #CPA #Bookkeeping #SmallBusiness
 ```
@@ -271,7 +271,7 @@ Your mission, should you choose to accept it 🎯
 We made a (slightly dramatic) 7-minute briefing on the AUR Referral Program: how to get your link, the tools in your dashboard, the rules, and how rewards are paid.
 
 Watch: [YouTube link]
-Sign up: https://aur.neuclix.com/refer.html
+Sign up: https://www.americanutilityreview.com/refer.html
 
 #ReferralProgram #Networking #Utilities
 ```
@@ -283,7 +283,7 @@ Know someone who runs a restaurant, hotel, farm, plant or church? 💡
 
 American Utility Review offers a free review of commercial utility bills (electric, gas, water/sewer) to find overcharges and refunds. No upfront cost.
 
-Now you can refer them and earn a referral reward when they become a client. Watch how it works, then get your link in about a minute 👉 https://aur.neuclix.com/refer.html
+Now you can refer them and earn a referral reward when they become a client. Watch how it works, then get your link in about a minute 👉 https://www.americanutilityreview.com/refer.html
 
 (Earnings aren't guaranteed. See program terms.)
 ```
@@ -309,16 +309,16 @@ Earnings not guaranteed; see terms.
 #ReferralProgram #SideHustle #SmallBusinessOwner #Utilities #Networking #Accountants #BusinessTips
 ```
 
-Instagram bio link: **aur.neuclix.com/refer.html**
+Instagram bio link: **americanutilityreview.com/refer.html**
 
 ### X (Twitter)
 
 ```
-Know a business with big utility bills? Refer them to a free utility bill review from American Utility Review and earn a referral reward if they become a client. How it works ▶️ [YouTube link] Join: aur.neuclix.com/refer.html
+Know a business with big utility bills? Refer them to a free utility bill review from American Utility Review and earn a referral reward if they become a client. How it works ▶️ [YouTube link] Join: americanutilityreview.com/refer.html
 ```
 
 ```
-Your dashboard tracks every referral: New → Qualified → Converted → Paid. Plus your own QR code, flyer and ready-made posts. Free to join: aur.neuclix.com/refer.html
+Your dashboard tracks every referral: New → Qualified → Converted → Paid. Plus your own QR code, flyer and ready-made posts. Free to join: americanutilityreview.com/refer.html
 ```
 
 ### YouTube Community post (once the channel has access)
@@ -343,7 +343,7 @@ I'm helping American Utility Review launch a referral program, and I thought of 
 AUR has audited commercial utility bills since 1986. They find billing errors and overcharges on electric, gas and water bills, at no upfront cost to the business. If you know business owners, managers or accountants, you can introduce them with your own link and earn a referral reward when they become a client.
 
 Here's a 6-minute video that explains it: [YouTube link]
-Sign up (about a minute): https://aur.neuclix.com/refer.html
+Sign up (about a minute): https://www.americanutilityreview.com/refer.html
 
 Happy to answer any questions.
 

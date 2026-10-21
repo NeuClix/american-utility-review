@@ -160,7 +160,7 @@ Cite the source whenever you use a fact. These were gathered from public sources
 
 **Always:**
 
-- Include a clear call to action: "Request your free bill review at aur.neuclix.com."
+- Include a clear call to action: "Request your free bill review at americanutilityreview.com."
 - Say "no upfront cost" or "free to request a review" accurately: requesting and reviewing is free; AUR's fee is a share of refunds and savings actually received.
 - Label dollar results as individual examples, and add "Results vary."
 - Keep claims about AUR to what's in this guide.
@@ -200,8 +200,8 @@ Cite the source whenever you use a fact. These were gathered from public sources
 
 **Call to action (use one)**
 
-- "Request your free bill review at aur.neuclix.com."
-- "Find out if you're owed a refund. It's free to ask: aur.neuclix.com."
+- "Request your free bill review at americanutilityreview.com."
+- "Find out if you're owed a refund. It's free to ask: americanutilityreview.com."
 - "Scan to request your free utility bill review." (for print, with a QR code)
 
 ---

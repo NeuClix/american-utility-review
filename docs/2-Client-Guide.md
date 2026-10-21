@@ -24,7 +24,7 @@ Our review focuses strictly on billing, not on operational changes.
 ## 2. Getting started, step by step
 
 ### Step 1: Request a free review
-Go to **aur.neuclix.com**, click **Request a free bill review**, and enter your name, organization, and an email or phone number. It takes under a minute.
+Go to **americanutilityreview.com**, click **Request a free bill review**, and enter your name, organization, and an email or phone number. It takes under a minute.
 
 ### Step 2: Upload your bills
 Right after submitting, you're taken to your **private upload page**.

@@ -8,7 +8,7 @@ This guide is for the people who run AUR's website, leads, documents and referra
 
 | Piece | What it is | Where |
 |---|---|---|
-| **Website / app** | Public site, referral pages, upload page, partner dashboard. Installable as an app (PWA). | aur.neuclix.com (hosted on Vercel) |
+| **Website / app** | Public site, referral pages, upload page, partner dashboard. Installable as an app (PWA). | www.americanutilityreview.com (hosted on Vercel; DNS at GoDaddy). The old address aur.neuclix.com redirects here. |
 | **Website code** | Every change pushed here goes live automatically in about a minute. | GitHub: NeuClix/american-utility-review |
 | **AUR Referrals Sheet** | The "back office": partners, leads, link visits, settings. | Google Drive, owned by steve@neuclix.com |
 | **Apps Script** | The engine behind the Sheet. Receives form data, saves uploads, sends emails. | AUR Referrals Sheet › Extensions › Apps Script |
@@ -109,9 +109,9 @@ Their files appear in AUR Client Documents › *Organization - date*, and the ro
 
 ## 5. Managing partners
 
-- **New partners** sign up themselves at aur.neuclix.com/refer.html. You get a "New referral partner" email.
+- **New partners** sign up themselves at americanutilityreview.com/refer.html. You get a "New referral partner" email.
 - **Pause or remove a partner:** set **Active** to **No**. They stop earning credit, and new requests using their code come in as direct leads. **Don't delete partner rows.** Deleting one permanently breaks their dashboard link and code; if that happens, re-enter the row exactly as it was, with the same Code and Token.
-- **Partner lost their dashboard link:** they can re-enter their email on the signup page and it's emailed again. You can also build it: `aur.neuclix.com/partner.html?t=` followed by their Token (unhide column B to see it).
+- **Partner lost their dashboard link:** they can re-enter their email on the signup page and it's emailed again. You can also build it: `americanutilityreview.com/partner.html?t=` followed by their Token (unhide column B to see it).
 - **Self-referrals are allowed.** A business owner who refers their own business earns the reward. The Flag column just marks them.
 - **Clubs and organizations:** when the Organization column holds a club, booster group or charity, pay the organization and collect a W-9 in its name.
 - **Public employees** can join and earn rewards, except for referring the public entity they work for. If a lead is a school district, city or county, check whether the partner works there; if so, the reward can go to their club or booster group, not to them personally.
@@ -130,7 +130,7 @@ Their files appear in AUR Client Documents › *Organization - date*, and the ro
 Every partner dashboard has a **Marketing kit**:
 
 - **Personal flyer:** automatic, with the partner's own QR code and link. Nothing to maintain.
-- **Campaign pieces (video, blog post, social and LinkedIn posts):** made in NotebookLM with the prompts in **6. Partner Campaign – NotebookLM Prompts**, then published to the website. Posts and captions contain `{link}`, which each partner's dashboard replaces with their own link. Blog posts live at aur.neuclix.com/blog/.
+- **Campaign pieces (video, blog post, social and LinkedIn posts):** made in NotebookLM with the prompts in **6. Partner Campaign – NotebookLM Prompts**, then published to the website. Posts and captions contain `{link}`, which each partner's dashboard replaces with their own link. Blog posts live at americanutilityreview.com/blog/.
 - **Shared materials:** files in the website's `partner-kit` folder, listed in `partner-kit/kit.json`. They can be generated from the AUR NotebookLM notebook with `tools/notebooklm_partner_kit.py`, run from a computer logged in to NotebookLM. **Review every file before publishing:** no promised savings, no invented statistics, no client names without permission.
 
 ---

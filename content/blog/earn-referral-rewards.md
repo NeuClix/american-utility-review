@@ -18,7 +18,7 @@ You don't audit anything, and you don't need to know how utility bills work. You
 
 ## How it works
 
-1. **Sign up** at aur.neuclix.com/refer.html. It's free and takes about a minute: your name, email and agreement to the program terms.
+1. **Sign up** at americanutilityreview.com/refer.html. It's free and takes about a minute: your name, email and agreement to the program terms.
 2. **Get your link.** You immediately receive your own referral link, plus a private dashboard.
 3. **Share it** with business owners and managers you know, by text, email, social media or in person.
 4. **Earn a reward** when a business requests a review through your link and becomes an AUR client.

@@ -1,5 +1,5 @@
 """
-Publish a blog post (for example, one written in NotebookLM) as a page on aur.neuclix.com
+Publish a blog post (for example, one written in NotebookLM) as a page on americanutilityreview.com
 and add it to every partner's dashboard, where partners share it with their own tracking link.
 
     python tools/publish_blog_post.py post.md --slug utility-refund \
@@ -20,7 +20,7 @@ from pathlib import Path
 import markdown
 
 ROOT = Path(__file__).resolve().parent.parent
-SITE = "https://aur.neuclix.com"
+SITE = "https://www.americanutilityreview.com"
 
 CTA = """
 <aside class="blog-cta">

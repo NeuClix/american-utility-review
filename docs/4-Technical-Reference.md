@@ -1,12 +1,12 @@
 # American Utility Review – Technical Reference
 
-For developers maintaining aur.neuclix.com. Covers architecture, files, configuration, the backend API, data model, and deployment.
+For developers maintaining americanutilityreview.com. Covers architecture, files, configuration, the backend API, data model, and deployment.
 
 ---
 
 ## 1. Architecture
 
-- **Front end:** static HTML, CSS and vanilla JavaScript with no build step. Hosted on **Vercel** (project `american-utility-review`, team "steve-neuclixcom's projects"), auto-deployed from GitHub **NeuClix/american-utility-review**, branch `main`. Custom domain **aur.neuclix.com**: a CNAME at RamNode DNS pointing to `cname.vercel-dns.com`.
+- **Front end:** static HTML, CSS and vanilla JavaScript with no build step. Hosted on **Vercel** (project `american-utility-review`, team "steve-neuclixcom's projects"), auto-deployed from GitHub **NeuClix/american-utility-review**, branch `main`. Custom domain **www.americanutilityreview.com** (GoDaddy DNS: `A @ 76.76.21.21`, `CNAME www cname.vercel-dns.com`); the bare domain redirects to www. The former address **aur.neuclix.com** (CNAME at RamNode) stays attached and redirects to the new domain, keeping the path and query (e.g. `?ref=`, `?t=`), via `vercel.json`.
 - **Back end:** a **Google Apps Script** web app bound to the **AUR Referrals** Google Sheet ("Execute as: Me (steve@neuclix.com)", "Who has access: Anyone"). It stores data in Sheet tabs, files in Google Drive, and sends email with MailApp.
 - **Fallback email:** **Web3Forms** (`api.web3forms.com/submit`), used by the contact form when the Apps Script is unreachable or returns an error.
 - **Authorization:** a Google Form (Letter of Authorization), pre-filled via `entry.*` URL parameters.

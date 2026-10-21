@@ -23,8 +23,8 @@ American Utility Review (AUR) is a team of independent commercial utility audito
 
 ## 2. How the referral program works
 
-1. **Sign up** at **aur.neuclix.com/refer.html**. It's free and takes about a minute.
-2. **Get your personal link.** After signing up you go straight to your private dashboard and receive an email with your dashboard link. Your link looks like `https://aur.neuclix.com/?ref=ABC234`, where `ABC234` is your personal referral code.
+1. **Sign up** at **americanutilityreview.com/refer.html**. It's free and takes about a minute.
+2. **Get your personal link.** After signing up you go straight to your private dashboard and receive an email with your dashboard link. Your link looks like `https://www.americanutilityreview.com/?ref=ABC234`, where `ABC234` is your personal referral code.
 3. **Share your link** with business owners and managers you know, by text, email, social media or in person using your QR code or flyer.
 4. **They request a free review** through your link. The request is credited to you.
 5. **AUR reviews their bills.** You can follow progress on your dashboard.
@@ -46,7 +46,7 @@ The current reward is shown at the top of your dashboard and on the Refer & Earn
 
 ## 4. Signing up
 
-1. Go to **aur.neuclix.com/refer.html** and scroll to **Get your referral link**.
+1. Go to **americanutilityreview.com/refer.html** and scroll to **Get your referral link**.
 2. Enter your full name and email. Phone is optional.
 3. Signing up for a club or group? Put its name in **Organization, club or business**.
 4. Tick the box to agree to the program terms, including telling people you may earn a referral fee.
@@ -58,7 +58,7 @@ The current reward is shown at the top of your dashboard and on the Refer & Earn
 
 ## 5. Your dashboard
 
-Your dashboard is a private page at `aur.neuclix.com/partner.html?t=…`. The link in your welcome email opens it. Keep that link private: anyone who has it can see your dashboard.
+Your dashboard is a private page at `americanutilityreview.com/partner.html?t=…`. The link in your welcome email opens it. Keep that link private: anyone who has it can see your dashboard.
 
 ### Stats
 - **Link visits:** how many times your link has been opened.
@@ -75,7 +75,7 @@ A QR code of your link. Use **Download QR code** to save it for business cards, 
 ### Marketing kit
 - **Your personal flyer:** a one-page flyer with your QR code and link, ready to print or save as a PDF to email. It includes a line saying you are an AUR referral partner who may earn a referral fee.
 - **Shared materials:** approved materials from AUR, such as a short video, audio explainers, infographics, slides and FAQ briefs, to download and share. Items with a **Copy caption** button come with post text that already includes your personal link.
-- **Blog articles:** articles on aur.neuclix.com written for business owners. **Copy my link** gives you the article's address with your code attached, so anyone who reads it and then requests a review is credited to you.
+- **Blog articles:** articles on americanutilityreview.com written for business owners. **Copy my link** gives you the article's address with your code attached, so anyone who reads it and then requests a review is credited to you.
 
 ### Share-ready posts
 Posts for LinkedIn, Facebook, Instagram and X, already filled in with your link. Copy one, paste it into the app, and attach the matching video or image from your Marketing kit. Instagram doesn't allow links in posts, so put your link in your bio or a story link sticker. This section appears once AUR has published posts.
@@ -160,7 +160,7 @@ The app remembers you on each device where you've opened your dashboard link. To
 
 **Why does my dashboard say "We couldn't open this dashboard"?** Your dashboard link may be incomplete, or your partner account may have been closed. Enter your email on the page to have your link sent again, or contact AUR.
 
-**I lost my dashboard link.** Go to aur.neuclix.com/refer.html and sign up again with the same email. Your existing dashboard link will be emailed to you; a new account is not created.
+**I lost my dashboard link.** Go to americanutilityreview.com/refer.html and sign up again with the same email. Your existing dashboard link will be emailed to you; a new account is not created.
 
 **Someone said they used my link but it's not on my dashboard.** They may have used a different device or browser, cleared their browser data, or come to the website without your link more than 90 days after opening it. Contact AUR with the details.
 
