@@ -653,7 +653,7 @@ a:hover { color: var(--navy); }
 .blog-note { margin-top: 24px; }
 
 /* ---------- Continue with Google ---------- */
-.btn.btn--google { border: 1px solid #aeb5c2; }
+.btn.btn--google { border: 1px solid #aeb5c2; min-height: 50px; padding: 12px 18px; font-size: 16px; }
 .btn--google { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; background: #fff; color: #1f1f1f; border: 1px solid #c7ccd6; font-weight: 600; cursor: pointer; }
 .btn--google:hover { background: #f4f6fa; }
 .btn--google:disabled { opacity: .6; cursor: default; }
