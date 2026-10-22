@@ -7,7 +7,18 @@ window.AUR_REFERRAL = {
   COOKIE_DAYS: 90,
   // Letter of Authorization (Google Form) question IDs used to pre-fill it from the upload page.
   // From the form's "Get pre-filled link": entry.NUMBER for each question.
-  LOA_FIELDS: { name: 'entry.1492896387', company: 'entry.1731655679', code: 'entry.26090282' }
+  LOA_FIELDS: { name: 'entry.1492896387', company: 'entry.1731655679', code: 'entry.26090282' },
+  // Show "Continue with Google" (needs Google sign-in enabled in Firebase and the matching Apps Script version)
+  GOOGLE_SIGNIN: false,
+  // Firebase project used for "Continue with Google" (these values are public by design)
+  FIREBASE: {
+    apiKey: 'AIzaSyDVbmuwvX7oKod4B3lyezmbLTEVYpLyrwM',
+    authDomain: 'american-utility-review.firebaseapp.com',
+    projectId: 'american-utility-review',
+    storageBucket: 'american-utility-review.firebasestorage.app',
+    messagingSenderId: '443544532433',
+    appId: '1:443544532433:web:3244a8b80ae1c48c171cf0'
+  }
 };
 
 // Shared helpers for the referral pages and the main site

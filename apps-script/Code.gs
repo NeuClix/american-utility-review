@@ -16,10 +16,13 @@
  * create an upload link for any lead row.
  *
  * Updating from an earlier version: paste this file, run `setup` again (it adds the new columns
- * and asks for Drive permission), then Deploy → Manage deployments → Edit → New version.
+ * and asks for any new permissions, such as connecting to Google to verify sign-ins), then
+ * Deploy → Manage deployments → Edit → New version.
  */
 
 var SITE_URL = 'https://www.americanutilityreview.com';
+// Firebase web API key (public) used to verify "Continue with Google" sign-ins
+var FIREBASE_API_KEY = 'AIzaSyDVbmuwvX7oKod4B3lyezmbLTEVYpLyrwM';
 var STATUSES = ['New', 'Qualified', 'Converted', 'Paid', 'Not a fit'];
 
 var SHEETS = {
@@ -108,6 +111,7 @@ function doPost(e) {
   lock.waitLock(20000);
   try {
     if (body.action === 'signup') return json_(signup_(body));
+    if (body.action === 'google') return json_(google_(body));
     if (body.action === 'lead') return json_(lead_(body));
     if (body.action === 'click') return json_(click_(body));
     if (body.action === 'resend') return json_(resend_(body));
@@ -141,6 +145,32 @@ function signup_(b) {
   });
   sendDashboardEmail_(name, email, token);
   notify_('New referral partner: ' + name, name + ' <' + email + '> joined with code ' + code + '.');
+  return { ok: true, token: token };
+}
+
+// "Continue with Google": verify the Firebase sign-in with Google, then open (or create) the partner account
+function google_(b) {
+  var idToken = String(b.idToken || '');
+  if (!idToken) throw new Error('Google sign-in didn\'t complete. Please try again.');
+  var res = UrlFetchApp.fetch('https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=' + FIREBASE_API_KEY, {
+    method: 'post', contentType: 'application/json', payload: JSON.stringify({ idToken: idToken }), muteHttpExceptions: true
+  });
+  if (res.getResponseCode() !== 200) throw new Error('We couldn\'t verify your Google sign-in. Please try again.');
+  var user = (JSON.parse(res.getContentText()).users || [])[0];
+  var email = user && String(user.email || '').toLowerCase();
+  if (!email || !user.emailVerified) throw new Error('Your Google account needs a verified email address.');
+
+  var existing = findRow_('Referrers', 'Email', email);
+  if (existing) return { ok: true, token: existing.Token, existing: true };
+
+  var name = clean_(user.displayName, 100) || email.split('@')[0];
+  var code = newCode_(), token = newToken_();
+  append_('Referrers', {
+    Code: code, Token: token, Name: name, Email: email,
+    Organization: clean_(b.organization, 150), 'Public employee': 'No', Joined: new Date(), Active: 'Yes'
+  });
+  sendDashboardEmail_(name, email, token);
+  notify_('New referral partner: ' + name, name + ' <' + email + '> joined with Google, code ' + code + '.');
   return { ok: true, token: token };
 }
 

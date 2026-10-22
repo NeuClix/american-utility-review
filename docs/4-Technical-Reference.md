@@ -26,6 +26,7 @@ For developers maintaining americanutilityreview.com. Covers architecture, files
 | `main.js` | Mobile menu; referral link capture; request form submission (Sheet with Web3Forms fallback); service-worker registration |
 | `referral-config.js` | `window.AUR_REFERRAL` config and the shared `AUR_REF` helpers (save/load code, GET/POST to the backend) |
 | `referral.js` | Signup, dashboard rendering, sharing, QR code, message templates, marketing kit, install prompt |
+| `google-auth.js` | "Continue with Google": Firebase Authentication (popup), loaded as an ES module from gstatic; exposes `window.AUR_GOOGLE.signIn()` / `signOut()` |
 | `upload.js` | Upload page: file queue, base64 upload, pre-filled authorization link |
 | `qrcode.min.js` | QRCode.js (MIT), self-hosted |
 | `sw.js` | Service worker (bump `VERSION` when the cached file list changes) |
@@ -69,6 +70,7 @@ Every request goes to the same `/exec` URL. POST bodies are JSON sent as text/pl
 ### POST
 | `action` | Body | Effect |
 |---|---|---|
+| `google` | idToken, organization | Verifies the Firebase ID token with Google (Identity Toolkit `accounts:lookup`, verified email required), then returns the partner's `{token}`, creating the partner on first sign-in. |
 | `signup` | name, email, phone, organization, public_employee, agree | Creates a partner (code plus token) or re-emails an existing one. Returns `{token}` or `{existing:true}`. Rejects public employees. |
 | `resend` | email | Emails the dashboard link if the email is registered. Always returns `ok`. |
 | `lead` | name, organization, contact, ref | Adds a Leads row with an upload token. Emails admin (reply-to = contact if it's an email) and the referrer. Returns `{upload}`. |
@@ -106,3 +108,10 @@ Columns are matched by header name. New columns must be appended at the end, and
 
 - Locally, run `python3 -m http.server` in the repo and route the API URL to a mock (the Playwright tests used during development mocked `script.google.com`).
 - The backend logic can be unit-tested in Node by loading `Code.gs` into a `vm` context with stubbed SpreadsheetApp, DriveApp, MailApp, Utilities, LockService, ScriptApp and ContentService.
+
+## Google sign-in (Firebase)
+
+- Firebase project **american-utility-review** (Spark plan), owned by steve@neuclix.com. Authentication › Google enabled; authorized domains include americanutilityreview.com and www.americanutilityreview.com.
+- Config lives in `referral-config.js` (`FIREBASE`, public by design). `GOOGLE_SIGNIN: true` shows the buttons.
+- The backend verifies each sign-in by calling Identity Toolkit with `FIREBASE_API_KEY` in `Code.gs`. If that API key is ever restricted by website (HTTP referrer), the Apps Script call will fail: restrict it by API (Identity Toolkit) instead.
+- Partners are matched by email, so existing partners keep their code and dashboard when they first sign in with Google.

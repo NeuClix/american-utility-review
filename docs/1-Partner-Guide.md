@@ -47,6 +47,8 @@ The current reward is shown at the top of your dashboard and on the Refer & Earn
 ## 4. Signing up
 
 1. Go to **americanutilityreview.com/refer.html** and scroll to **Get your referral link**.
+    - **Fastest:** click **Continue with Google**. Your account is created (or found, if you've signed up before) and your dashboard opens. Fill in the Organization box first if you're signing up for a club or group.
+    - Or fill in the form below with your email, as follows.
 2. Enter your full name and email. Phone is optional.
 3. Signing up for a club or group? Put its name in **Organization, club or business**.
 4. Tick the box to agree to the program terms, including telling people you may earn a referral fee.
@@ -159,6 +161,8 @@ The app remembers you on each device where you've opened your dashboard link. To
 **When do I get paid?** After your referral becomes a client and AUR receives the client's payment, normally within 30 days of that.
 
 **Why does my dashboard say "We couldn't open this dashboard"?** Your dashboard link may be incomplete, or your partner account may have been closed. Enter your email on the page to have your link sent again, or contact AUR.
+
+**How do I open my dashboard on a new phone or computer?** Go to americanutilityreview.com/partner.html and click **Sign in with Google**, using the Google account with the same email you signed up with. Or have your dashboard link emailed to you.
 
 **I lost my dashboard link.** Go to americanutilityreview.com/refer.html and sign up again with the same email. Your existing dashboard link will be emailed to you; a new account is not created.
 

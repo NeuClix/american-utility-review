@@ -54,6 +54,34 @@
     });
   });
 
+  /* ---------- Continue with Google ---------- */
+  if (!window.AUR_REFERRAL.GOOGLE_SIGNIN) {
+    document.querySelectorAll('.js-google, .google-note, .or-divider').forEach(function (el) { el.hidden = true; });
+  }
+  document.querySelectorAll('.js-google').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var form = btn.closest('form');
+      if (!AUR_REF.enabled) return msg(form, OFF_MSG, true);
+      if (!window.AUR_GOOGLE) return msg(form, 'Google sign-in is still loading. Please try again in a moment.', true);
+      btn.disabled = true;
+      msg(form, 'Signing in with Google…');
+      window.AUR_GOOGLE.signIn().then(function (g) {
+        var org = form.elements.organization ? form.elements.organization.value : '';
+        return AUR_REF.post({ action: 'google', idToken: g.idToken, organization: org });
+      }).then(function (r) {
+        if (!r.ok || !r.token) throw new Error(r.error || '');
+        try { localStorage.setItem('aur_partner', r.token); } catch (x) {}
+        location.href = 'partner.html?t=' + r.token;
+      }).catch(function (err) {
+        btn.disabled = false;
+        var code = err && err.code || '';
+        if (code === 'auth/popup-closed-by-user' || code === 'auth/cancelled-popup-request') return msg(form, '');
+        if (code === 'auth/popup-blocked') return msg(form, 'Your browser blocked the Google window. Allow pop-ups for this site and try again.', true);
+        msg(form, (err && err.message && !code) ? err.message : 'Google sign-in didn’t work. Please try again, or use your email instead.', true);
+      });
+    });
+  });
+
   /* ---------- dashboard ---------- */
   if (!$('dash')) return;
 
@@ -69,6 +97,14 @@
     $('dash-error-text').textContent = text;
   }
 
+  var signOutLink = $('sign-out');
+  if (signOutLink) signOutLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    try { localStorage.removeItem('aur_partner'); } catch (x) {}
+    var done = function () { location.href = '/refer.html'; };
+    if (window.AUR_GOOGLE) window.AUR_GOOGLE.signOut().then(done, done); else done();
+  });
+
   var resend = $('resend-form');
   resend.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -79,7 +115,10 @@
   });
 
   if (!AUR_REF.enabled) return showError(OFF_MSG);
-  if (!token) return showError('Open the dashboard link from your welcome email, or have it sent again.');
+  if (!token) {
+    $('dash-error-title').textContent = 'Sign in to your dashboard';
+    return showError('Sign in with Google, or we\u2019ll email you your private dashboard link.');
+  }
 
   AUR_REF.get({ action: 'dashboard', token: token }).then(function (d) {
     if (!d.ok) return showError(d.error || 'This dashboard link isn’t valid.');

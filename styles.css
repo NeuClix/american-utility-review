@@ -651,3 +651,15 @@ a:hover { color: var(--navy); }
 .blog-cta { margin: 40px 0 24px; padding: 24px 28px; background: var(--tint); border-left: 4px solid var(--red); }
 .blog-cta h2 { margin-top: 0 !important; }
 .blog-note { margin-top: 24px; }
+
+/* ---------- Continue with Google ---------- */
+.btn.btn--google { border: 1px solid #aeb5c2; }
+.btn--google { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; background: #fff; color: #1f1f1f; border: 1px solid #c7ccd6; font-weight: 600; cursor: pointer; }
+.btn--google:hover { background: #f4f6fa; }
+.btn--google:disabled { opacity: .6; cursor: default; }
+.g-logo { width: 20px; height: 20px; flex: none; }
+.google-note { margin: 8px 0 0; }
+.or-divider[hidden], .google-note[hidden] { display: none; }
+.or-divider { display: flex; align-items: center; gap: 12px; margin: 18px 0 6px; color: var(--slate); font-size: 13px; }
+.or-divider::before, .or-divider::after { content: ""; flex: 1; border-top: 1px solid var(--line); }
+.btn[hidden] { display: none; }
