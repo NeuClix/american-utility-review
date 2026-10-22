@@ -16,7 +16,7 @@ Last updated: October 1, 2026. ✅ = done · ⬜ = to do · [Steve] = needs Stev
 
 ## Later
 - ⬜ **1. Google sign-in for partners:** live (Firebase project american-utility-review, Apps Script Version 4). Steve to test a real sign-in. Built on Firebase Authentication so steps 2 and 3 reuse it. Steve creates the Firebase project (about 10 minutes); the Sheet stays the back office.
-- ⬜ **2. Push notifications for partners** (Firebase Cloud Messaging), using the same Firebase project.
+- ⬜ **2. Push notifications (next) for partners** (Firebase Cloud Messaging), using the same Firebase project.
 - ⬜ **3. Firebase migration** (database, storage, admin view) **with groups:** a leader creates a group with a goal; members each get their own link; credit rolls up to the group and rewards are paid to the group; goal thermometer, leaderboard, team alerts, public group page. AUR to decide: group reward or goal bonus, who can start a group (open or approved).
 - ⬜ **"Ask the AUR assistant" button** linking to a public NotebookLM share, if wanted.
 - ⬜ **Credibility updates from the research report:** dated and documented results, a typical-outcome line, client-name permissions, a "How we're paid" section, a trust bar, and an anti-scam statement.
@@ -26,6 +26,7 @@ Last updated: October 1, 2026. ✅ = done · ⬜ = to do · [Steve] = needs Stev
 - ⬜ **Client logos**, only with written permission.
 
 ## Done
+- ✅ Google sign-in for partners ("Continue with Google" on sign-up and dashboard; Firebase project american-utility-review; Apps Script Version 4); tested with a real sign-in
 - ✅ Apps Script Version 3 deployed (emails and partner links use the new domain)
 - ✅ New domain www.americanutilityreview.com live (GoDaddy DNS → Vercel); aur.neuclix.com redirects there with page and partner code kept
 - ✅ User and admin documentation: Partner, Client, Admin and Technical guides (`docs/` and Google Drive › AUR Documentation)
