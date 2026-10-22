@@ -83,6 +83,8 @@
 
   AUR_REF.get({ action: 'dashboard', token: token }).then(function (d) {
     if (!d.ok) return showError(d.error || 'This dashboard link isn’t valid.');
+    // Build the partner's link from the site address, so it always matches the current domain
+    if (d.code && /^https?:$/.test(location.protocol)) d.link = location.origin + '/?ref=' + encodeURIComponent(d.code);
     render(d);
   }).catch(function () {
     showError('We couldn’t load your dashboard. Please refresh the page in a moment.');
