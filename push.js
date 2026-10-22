@@ -8,7 +8,7 @@ const app = getApps().length ? getApps()[0] : initializeApp(cfg);
 
 window.AUR_PUSH = {
   async supported() {
-    return 'Notification' in window && 'serviceWorker' in navigator && !!cfg.vapidKey && (await isSupported());
+    return !!window.AUR_REFERRAL.PUSH_NOTIFICATIONS && 'Notification' in window && 'serviceWorker' in navigator && !!cfg.vapidKey && (await isSupported());
   },
   async enable() {
     const permission = await Notification.requestPermission();

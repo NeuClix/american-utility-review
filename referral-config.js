@@ -10,6 +10,8 @@ window.AUR_REFERRAL = {
   LOA_FIELDS: { name: 'entry.1492896387', company: 'entry.1731655679', code: 'entry.26090282' },
   // Show "Continue with Google" (needs Google sign-in enabled in Firebase and the matching Apps Script version)
   GOOGLE_SIGNIN: true,
+  // Show "Turn on notifications" on the dashboard (needs the Apps Script version with push_subscribe)
+  PUSH_NOTIFICATIONS: false,
   // Firebase project used for "Continue with Google" (these values are public by design)
   FIREBASE: {
     apiKey: 'AIzaSyDVbmuwvX7oKod4B3lyezmbLTEVYpLyrwM',
@@ -19,7 +21,7 @@ window.AUR_REFERRAL = {
     messagingSenderId: '443544532433',
     appId: '1:443544532433:web:3244a8b80ae1c48c171cf0',
     // Cloud Messaging › Web Push certificates › key pair (public). Empty hides the notifications panel.
-    vapidKey: ''
+    vapidKey: 'BDvMKDsnChGgnN7ibzZNmTwiEG9XR-g7yHZ6lnxHTbn6eGIGgqjahh2PsUly3qNS0abkmTN4aOSf5KSE9mI7NFY'
   }
 };
 

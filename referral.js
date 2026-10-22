@@ -237,7 +237,7 @@
         var ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
         var standalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
         if (!ok) {
-          if (ios && !standalone && window.AUR_REFERRAL.FIREBASE.vapidKey) {
+          if (ios && !standalone && window.AUR_REFERRAL.PUSH_NOTIFICATIONS) {
             panel.hidden = false;
             btn.hidden = true;
             text.innerHTML = 'On iPhone, notifications work once you add this dashboard to your home screen: tap <strong>Share</strong>, then <strong>Add to Home Screen</strong>, and open it from there.';
