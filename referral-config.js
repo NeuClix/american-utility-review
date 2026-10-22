@@ -17,7 +17,9 @@ window.AUR_REFERRAL = {
     projectId: 'american-utility-review',
     storageBucket: 'american-utility-review.firebasestorage.app',
     messagingSenderId: '443544532433',
-    appId: '1:443544532433:web:3244a8b80ae1c48c171cf0'
+    appId: '1:443544532433:web:3244a8b80ae1c48c171cf0',
+    // Cloud Messaging › Web Push certificates › key pair (public). Empty hides the notifications panel.
+    vapidKey: ''
   }
 };
 

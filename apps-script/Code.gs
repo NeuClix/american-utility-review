@@ -23,10 +23,13 @@
 var SITE_URL = 'https://www.americanutilityreview.com';
 // Firebase web API key (public) used to verify "Continue with Google" sign-ins
 var FIREBASE_API_KEY = 'AIzaSyDVbmuwvX7oKod4B3lyezmbLTEVYpLyrwM';
+// Firebase project that sends push notifications (Firebase Cloud Messaging)
+var FIREBASE_PROJECT = 'american-utility-review';
+var MAX_PUSH_DEVICES = 5;
 var STATUSES = ['New', 'Qualified', 'Converted', 'Paid', 'Not a fit'];
 
 var SHEETS = {
-  Referrers: ['Code', 'Token', 'Name', 'Email', 'Phone', 'Organization', 'Public employee', 'Joined', 'Active', 'Payout notes'],
+  Referrers: ['Code', 'Token', 'Name', 'Email', 'Phone', 'Organization', 'Public employee', 'Joined', 'Active', 'Payout notes', 'Push tokens'],
   Leads: ['Date', 'Referral code', 'Name', 'Organization', 'Contact', 'Status', 'Reward', 'Status updated', 'Notes', 'Flag',
           'Documents', 'Docs folder', 'Upload token'],
   Clicks: ['Date', 'Referral code', 'Page', 'Referrer site'],
@@ -73,6 +76,7 @@ function setup() {
 
   // Hide the secret token columns from casual view
   ss.getSheetByName('Referrers').hideColumns(col_('Referrers', 'Token'));
+  ss.getSheetByName('Referrers').hideColumns(col_('Referrers', 'Push tokens'));
   leads.hideColumns(col_('Leads', 'Upload token'));
 
   var sheet1 = ss.getSheetByName('Sheet1');
@@ -112,6 +116,7 @@ function doPost(e) {
   try {
     if (body.action === 'signup') return json_(signup_(body));
     if (body.action === 'google') return json_(google_(body));
+    if (body.action === 'push_subscribe') return json_(pushSubscribe_(body));
     if (body.action === 'lead') return json_(lead_(body));
     if (body.action === 'click') return json_(click_(body));
     if (body.action === 'resend') return json_(resend_(body));
@@ -205,6 +210,8 @@ function lead_(b) {
       'Hi ' + first_(ref.Name) + ',\n\nSomeone just requested a bill review through your link' +
       (b.organization ? ' (' + clean_(b.organization, 150) + ')' : '') + '. We\'ll keep you posted as it moves along.\n\n' +
       'Your dashboard: ' + dashUrl_(ref.Token) + '\n\nAmerican Utility Review');
+    push_(ref, 'New referral! 🎉', 'Someone just requested a bill review through your link' +
+      (b.organization ? ': ' + clean_(b.organization, 150) : '') + '.');
   }
   return { ok: true, upload: upload };
 }
@@ -379,6 +386,60 @@ function onLeadEdit(e) {
   MailApp.sendEmail(ref.Email, 'Referral update: ' + status,
     'Hi ' + first_(ref.Name) + ',\n\n' + msgs[status].charAt(0).toUpperCase() + msgs[status].slice(1) +
     '\n\nYour dashboard: ' + dashUrl_(ref.Token) + '\n\nAmerican Utility Review');
+  var titles = { Qualified: 'Referral being reviewed', Converted: 'Your referral became a client! 🎉', Paid: 'Your reward was paid 💵', 'Not a fit': 'Referral update' };
+  push_(ref, titles[status], msgs[status].charAt(0).toUpperCase() + msgs[status].slice(1));
+}
+
+/* ---------- push notifications (Firebase Cloud Messaging) ---------- */
+
+// Save a device's push token for a partner (up to MAX_PUSH_DEVICES devices) and send a confirmation
+function pushSubscribe_(b) {
+  var token = clean_(b.token, 64), fcm = String(b.fcm || '').trim().slice(0, 4096);
+  var ref = token && findRow_('Referrers', 'Token', token);
+  if (!ref) throw new Error('Please reopen your dashboard and try again.');
+  if (!/^[\w:-]{20,}$/.test(fcm)) throw new Error('This device didn\'t give us a notification address.');
+  var list = pushTokens_(ref).filter(function (t) { return t !== fcm; });
+  list.push(fcm);
+  list = list.slice(-MAX_PUSH_DEVICES);
+  updateRow_('Referrers', 'Token', token, { 'Push tokens': list.join('\n') });
+  ref['Push tokens'] = list.join('\n');
+  var sent = sendPush_(fcm, 'Notifications are on ✅', 'We\'ll let you know here when your referrals move along.', dashUrl_(token));
+  return { ok: true, test: sent };
+}
+
+function pushTokens_(ref) {
+  return String(ref['Push tokens'] || '').split(/\s+/).filter(Boolean);
+}
+
+// Send a notification to every device a partner turned notifications on for. Never throws.
+function push_(ref, title, body) {
+  try {
+    var list = pushTokens_(ref);
+    if (!list.length) return;
+    var keep = list.filter(function (t) { return sendPush_(t, title, body, dashUrl_(ref.Token)) !== 'gone'; });
+    if (keep.length !== list.length) updateRow_('Referrers', 'Token', ref.Token, { 'Push tokens': keep.join('\n') });
+  } catch (err) {
+    console.log('Push failed: ' + err);
+  }
+}
+
+// Returns 'sent', 'gone' (device no longer subscribed) or 'error'
+function sendPush_(fcmToken, title, body, link) {
+  var res = UrlFetchApp.fetch('https://fcm.googleapis.com/v1/projects/' + FIREBASE_PROJECT + '/messages:send', {
+    method: 'post',
+    contentType: 'application/json',
+    headers: { Authorization: 'Bearer ' + ScriptApp.getOAuthToken(), 'x-goog-user-project': FIREBASE_PROJECT },
+    payload: JSON.stringify({ message: {
+      token: fcmToken,
+      data: { title: String(title), body: String(body), link: String(link || SITE_URL) },
+      webpush: { headers: { Urgency: 'high', TTL: '86400' } }
+    } }),
+    muteHttpExceptions: true
+  });
+  var code = res.getResponseCode();
+  if (code === 200) return 'sent';
+  console.log('FCM ' + code + ': ' + res.getContentText().slice(0, 300));
+  return (code === 404 || /UNREGISTERED/.test(res.getContentText())) ? 'gone' : 'error';
 }
 
 /* ---------- helpers ---------- */

@@ -27,6 +27,7 @@ For developers maintaining americanutilityreview.com. Covers architecture, files
 | `referral-config.js` | `window.AUR_REFERRAL` config and the shared `AUR_REF` helpers (save/load code, GET/POST to the backend) |
 | `referral.js` | Signup, dashboard rendering, sharing, QR code, message templates, marketing kit, install prompt |
 | `google-auth.js` | "Continue with Google": Firebase Authentication (popup), loaded as an ES module from gstatic; exposes `window.AUR_GOOGLE.signIn()` / `signOut()` |
+| `push.js` | Push notifications: Firebase Cloud Messaging `getToken` with the site's own service worker; exposes `window.AUR_PUSH` |
 | `upload.js` | Upload page: file queue, base64 upload, pre-filled authorization link |
 | `qrcode.min.js` | QRCode.js (MIT), self-hosted |
 | `sw.js` | Service worker (bump `VERSION` when the cached file list changes) |
@@ -71,6 +72,7 @@ Every request goes to the same `/exec` URL. POST bodies are JSON sent as text/pl
 | `action` | Body | Effect |
 |---|---|---|
 | `google` | idToken, organization | Verifies the Firebase ID token with Google (Identity Toolkit `accounts:lookup`, verified email required), then returns the partner's `{token}`, creating the partner on first sign-in. |
+| `push_subscribe` | token, fcm | Saves a device's FCM token on the partner row (`Push tokens`, newline-separated, last 5 kept) and sends a confirmation notification |
 | `signup` | name, email, phone, organization, public_employee, agree | Creates a partner (code plus token) or re-emails an existing one. Returns `{token}` or `{existing:true}`. Rejects public employees. |
 | `resend` | email | Emails the dashboard link if the email is registered. Always returns `ok`. |
 | `lead` | name, organization, contact, ref | Adds a Leads row with an upload token. Emails admin (reply-to = contact if it's an email) and the referrer. Returns `{upload}`. |
@@ -115,3 +117,10 @@ Columns are matched by header name. New columns must be appended at the end, and
 - Config lives in `referral-config.js` (`FIREBASE`, public by design). `GOOGLE_SIGNIN: true` shows the buttons.
 - The backend verifies each sign-in by calling Identity Toolkit with `FIREBASE_API_KEY` in `Code.gs`. If that API key is ever restricted by website (HTTP referrer), the Apps Script call will fail: restrict it by API (Identity Toolkit) instead.
 - Partners are matched by email, so existing partners keep their code and dashboard when they first sign in with Google.
+
+## Push notifications (Firebase Cloud Messaging)
+
+- The dashboard's **Turn on notifications** button asks permission, gets an FCM token with the public VAPID key (`FIREBASE.vapidKey` in `referral-config.js`; empty hides the panel) and posts `push_subscribe`.
+- `sw.js` handles `push` (data messages: `title`, `body`, `link`) and `notificationclick` (opens or focuses the dashboard).
+- The backend sends with the FCM HTTP v1 API (`projects/american-utility-review/messages:send`) using `ScriptApp.getOAuthToken()` (scope `firebase.messaging`, listed in `apps-script/appsscript.json`) and header `x-goog-user-project`. Sent on a new referral (`lead_`) and on status changes (`onLeadEdit`), next to the emails. Tokens that return UNREGISTERED are removed.
+- iPhone/iPad: Web Push works only when the dashboard is installed to the home screen (iOS 16.4+).

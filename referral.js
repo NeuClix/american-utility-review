@@ -161,6 +161,7 @@
     $('ref-empty').hidden = d.referrals.length > 0;
 
     setupInstall();
+    setupPush();
     setupKit(d);
     setupSharing(d.link);
     setupQr(d.link, d.code);
@@ -220,6 +221,56 @@
       $('install-btn').hidden = true;
       $('install-text').innerHTML = 'On iPhone: tap the <strong>Share</strong> button in Safari, then <strong>Add to Home Screen</strong>.';
     }
+  }
+
+  // Push notifications: show the panel on devices that support it
+  function setupPush() {
+    var panel = $('push-panel'), btn = $('push-btn'), text = $('push-text');
+    if (!panel) return;
+    var on = function () {
+      btn.hidden = true;
+      text.textContent = 'Notifications are on for this device. You can turn them off in your browser or phone settings.';
+    };
+    var start = function () {
+      if (!window.AUR_PUSH) return;
+      window.AUR_PUSH.supported().then(function (ok) {
+        var ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
+        var standalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+        if (!ok) {
+          if (ios && !standalone && window.AUR_REFERRAL.FIREBASE.vapidKey) {
+            panel.hidden = false;
+            btn.hidden = true;
+            text.innerHTML = 'On iPhone, notifications work once you add this dashboard to your home screen: tap <strong>Share</strong>, then <strong>Add to Home Screen</strong>, and open it from there.';
+          }
+          return;
+        }
+        panel.hidden = false;
+        var saved = null;
+        try { saved = localStorage.getItem('aur_push_on'); } catch (x) {}
+        if (Notification.permission === 'granted' && saved === token) on();
+        if (Notification.permission === 'denied') {
+          btn.hidden = true;
+          text.textContent = 'Notifications are blocked for this site. To turn them on, allow notifications in your browser\u2019s site settings, then reload this page.';
+        }
+      });
+    };
+    btn.onclick = function () {
+      btn.disabled = true;
+      text.textContent = 'Turning on notifications…';
+      window.AUR_PUSH.enable().then(function (fcm) {
+        return AUR_REF.post({ action: 'push_subscribe', token: token, fcm: fcm });
+      }).then(function (r) {
+        if (!r.ok) throw new Error(r.error || '');
+        try { localStorage.setItem('aur_push_on', token); } catch (x) {}
+        on();
+      }).catch(function (err) {
+        btn.disabled = false;
+        text.textContent = err && err.code === 'blocked'
+          ? 'Notifications weren\u2019t allowed. To turn them on, allow notifications in your browser\u2019s site settings, then try again.'
+          : (err && err.message && !err.code ? err.message : 'We couldn\u2019t turn on notifications on this device. Please try again.');
+      });
+    };
+    if (window.AUR_PUSH) start(); else document.addEventListener('aur-push-ready', start, { once: true });
   }
 
   // Marketing kit: personal flyer plus shared materials listed in partner-kit/kit.json

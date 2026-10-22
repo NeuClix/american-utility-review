@@ -100,7 +100,15 @@ You get an email each time a referral's status changes, plus an email when someo
 
 ---
 
-## 6. Install the app
+## 6. Notifications
+
+On your dashboard, click **Turn on notifications** and allow them when your browser asks. You'll get an alert on that device when someone requests a review through your link, and each time a referral moves along (being reviewed, became a client, reward paid). Tap an alert to open your dashboard. Turn it on separately on each phone or computer you use (up to 5).
+
+- **Android, Windows, Mac:** works in Chrome, Edge and Firefox.
+- **iPhone or iPad:** first add your dashboard to your home screen (Safari › Share › Add to Home Screen), open it from there, then turn on notifications.
+- To stop them, turn notifications off for the site in your browser or phone settings.
+
+## 6b. Install the app
 
 You can add your dashboard to your phone or computer like an app. The app, called **AUR**, opens straight to your dashboard.
 

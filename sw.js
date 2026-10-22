@@ -1,10 +1,10 @@
 // Service worker: makes the site installable and loads it fast on repeat visits.
 // Pages load from the network first (so updates show right away) and fall back to the cached copy offline.
 // Calls to the Google Apps Script backend are never cached.
-var VERSION = 'aur-v5';
+var VERSION = 'aur-v6';
 var CORE = [
   '/', '/index.html', '/refer.html', '/partner.html', '/upload.html', '/referral-terms.html',
-  '/styles.css', '/main.js', '/referral.js', '/referral-config.js', '/upload.js', '/qrcode.min.js', '/google-auth.js',
+  '/styles.css', '/main.js', '/referral.js', '/referral-config.js', '/upload.js', '/qrcode.min.js', '/google-auth.js', '/push.js',
   '/flyer.html', '/logo.png', '/favicon-32.png', '/icon-192.png', '/icon-512.png'
 ];
 
@@ -59,5 +59,29 @@ self.addEventListener('fetch', function (e) {
       });
     })
   );
+});
+
+// Push notifications from Firebase Cloud Messaging (data messages: title, body, link)
+self.addEventListener('push', function (e) {
+  var msg = {};
+  try { msg = e.data ? e.data.json() : {}; } catch (x) {}
+  var d = msg.data || msg;
+  e.waitUntil(self.registration.showNotification(d.title || 'American Utility Review', {
+    body: d.body || '',
+    icon: '/icon-192.png',
+    badge: '/favicon-32.png',
+    data: { link: d.link || '/partner.html' }
+  }));
+});
+
+self.addEventListener('notificationclick', function (e) {
+  e.notification.close();
+  var link = (e.notification.data && e.notification.data.link) || '/partner.html';
+  e.waitUntil(self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function (list) {
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].url.indexOf('/partner.html') >= 0 && 'focus' in list[i]) return list[i].navigate(link).then(function (c) { return c && c.focus(); });
+    }
+    return self.clients.openWindow(link);
+  }));
 });
 }
