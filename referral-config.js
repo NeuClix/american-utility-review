@@ -11,7 +11,7 @@ window.AUR_REFERRAL = {
   // Show "Continue with Google" (needs Google sign-in enabled in Firebase and the matching Apps Script version)
   GOOGLE_SIGNIN: true,
   // Show "Turn on notifications" on the dashboard (needs the Apps Script version with push_subscribe)
-  PUSH_NOTIFICATIONS: false,
+  PUSH_NOTIFICATIONS: true,
   // Firebase project used for "Continue with Google" (these values are public by design)
   FIREBASE: {
     apiKey: 'AIzaSyDVbmuwvX7oKod4B3lyezmbLTEVYpLyrwM',

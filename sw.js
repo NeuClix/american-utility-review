@@ -1,7 +1,7 @@
 // Service worker: makes the site installable and loads it fast on repeat visits.
 // Pages load from the network first (so updates show right away) and fall back to the cached copy offline.
 // Calls to the Google Apps Script backend are never cached.
-var VERSION = 'aur-v6';
+var VERSION = 'aur-v7';
 var CORE = [
   '/', '/index.html', '/refer.html', '/partner.html', '/upload.html', '/referral-terms.html',
   '/styles.css', '/main.js', '/referral.js', '/referral-config.js', '/upload.js', '/qrcode.min.js', '/google-auth.js', '/push.js',
