@@ -1,13 +1,34 @@
 // Service worker: makes the site installable and loads it fast on repeat visits.
 // Pages load from the network first (so updates show right away) and fall back to the cached copy offline.
 // Calls to the Google Apps Script backend are never cached.
-var VERSION = 'aur-v2';
+var VERSION = 'aur-v3';
 var CORE = [
   '/', '/index.html', '/refer.html', '/partner.html', '/upload.html', '/referral-terms.html',
   '/styles.css', '/main.js', '/referral.js', '/referral-config.js', '/upload.js', '/qrcode.min.js',
   '/flyer.html', '/logo.png', '/favicon-32.png', '/icon-192.png', '/icon-512.png'
 ];
 
+// Old address (aur.neuclix.com): retire this service worker and send open pages to the new domain.
+var NEW_ORIGIN = 'https://www.americanutilityreview.com';
+var RETIRED = self.location.hostname === 'aur.neuclix.com';
+if (RETIRED) {
+  self.addEventListener('install', function () { self.skipWaiting(); });
+  self.addEventListener('activate', function (e) {
+    e.waitUntil(
+      caches.keys().then(function (keys) { return Promise.all(keys.map(function (k) { return caches.delete(k); })); })
+        .then(function () { return self.registration.unregister(); })
+        .then(function () { return self.clients.matchAll({ type: 'window' }); })
+        .then(function (list) {
+          list.forEach(function (c) {
+            var u = new URL(c.url);
+            c.navigate(NEW_ORIGIN + u.pathname + u.search + u.hash);
+          });
+        })
+    );
+  });
+}
+
+if (!RETIRED) {
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(VERSION).then(function (c) { return c.addAll(CORE); }).then(function () { return self.skipWaiting(); }));
 });
@@ -39,3 +60,4 @@ self.addEventListener('fetch', function (e) {
     })
   );
 });
+}

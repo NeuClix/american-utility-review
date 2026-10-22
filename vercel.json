@@ -1,9 +1,9 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/:path((?!sw\\.js$).*)",
       "has": [{ "type": "host", "value": "aur.neuclix.com" }],
-      "destination": "https://www.americanutilityreview.com/:path*",
+      "destination": "https://www.americanutilityreview.com/:path",
       "permanent": true
     }
   ]
