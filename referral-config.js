@@ -9,7 +9,7 @@ window.AUR_REFERRAL = {
   // From the form's "Get pre-filled link": entry.NUMBER for each question.
   LOA_FIELDS: { name: 'entry.1492896387', company: 'entry.1731655679', code: 'entry.26090282' },
   // Show "Continue with Google" (needs Google sign-in enabled in Firebase and the matching Apps Script version)
-  GOOGLE_SIGNIN: false,
+  GOOGLE_SIGNIN: true,
   // Firebase project used for "Continue with Google" (these values are public by design)
   FIREBASE: {
     apiKey: 'AIzaSyDVbmuwvX7oKod4B3lyezmbLTEVYpLyrwM',
