@@ -3,7 +3,7 @@
 Last updated: October 1, 2026. ✅ = done · ⬜ = to do · [Steve] = needs Steve or AUR
 
 ## Next up
-- ⬜ [Steve] **Finish the domain switch:** paste the updated `apps-script/Code.gs` and redeploy (new partner links and emails use www.americanutilityreview.com); update YouTube descriptions and social bios to americanutilityreview.com. Optional: apply Vercel's recommended DNS values to clear the orange notices.
+- ⬜ [Steve] **Update YouTube descriptions and social bios** to americanutilityreview.com (old links still work via redirect). Optional: apply Vercel's recommended DNS values to clear the orange notices.
 - ⬜ [Steve/AUR] **Confirm the school-district rule:** a club or booster group may refer the school district its members work for, with the reward paid to the group (not a person). Some districts have their own rules; AUR should be comfortable with this.
 - ⬜ [Steve] **Videos mention the old rules** ("no self-referrals", "public employees can't join"). The website and terms now allow self-referrals and clubs. Regenerate in NotebookLM when convenient; the YouTube descriptions have the updated line.
 - ⬜ [Steve] **Publish the referral videos on YouTube** using **7. YouTube and Social Launch Kit** (titles, descriptions, chapters, tags, captions, thumbnails), then send Claude the YouTube links to switch the website's video players.
@@ -26,6 +26,7 @@ Last updated: October 1, 2026. ✅ = done · ⬜ = to do · [Steve] = needs Stev
 - ⬜ **Client logos**, only with written permission.
 
 ## Done
+- ✅ Apps Script Version 3 deployed (emails and partner links use the new domain)
 - ✅ New domain www.americanutilityreview.com live (GoDaddy DNS → Vercel); aur.neuclix.com redirects there with page and partner code kept
 - ✅ User and admin documentation: Partner, Client, Admin and Technical guides (`docs/` and Google Drive › AUR Documentation)
 - ✅ Website live at americanutilityreview.com (Vercel, auto-deploys from GitHub NeuClix/american-utility-review)
